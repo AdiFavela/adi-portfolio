@@ -46,8 +46,8 @@
   .nav-active::after{transform:scaleX(1) !important;}
   .cta-primary{transition:background .2s,transform .2s;}
   .cta-primary:hover{background:#d4857a;transform:translateY(-2px);}
-  .nav-toggle{display:none;flex-direction:column;justify-content:center;gap:5px;width:28px;height:22px;background:none;border:none;cursor:pointer;padding:0;}
-  .nav-toggle span{display:block;width:100%;height:2px;background:#ece3d6;border-radius:2px;transition:transform .2s ease,opacity .2s ease;}
+  .nav-toggle{display:none;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:44px;height:44px;background:none;border:none;cursor:pointer;padding:0;}
+  .nav-toggle span{display:block;width:24px;height:2px;background:#ece3d6;border-radius:2px;transition:transform .2s ease,opacity .2s ease;}
   .nav-toggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
   .nav-toggle.open span:nth-child(2){opacity:0;}
   .nav-toggle.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
@@ -64,6 +64,8 @@
     #navLinks .nav-link { padding: 10px 0; width: 100%; text-align: right; }
     [style*="gap:clamp(24px,4vw,48px)"] { gap: 12px !important; }
     [style*="gap:clamp(28px,4vw,56px)"] { gap: 12px !important; }
+    [style*="background:#eef1ec"][style*="aspect-ratio:16/9"] { aspect-ratio: auto !important; background: none !important; height: auto !important; }
+    [style*="background:#eef1ec"][style*="aspect-ratio:16/9"] img { width: 100% !important; height: auto !important; object-fit: contain !important; margin: 0 !important; }
   }
 </style>
 </head>
