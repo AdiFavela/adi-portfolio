@@ -35,8 +35,25 @@
   .nav-active::after{transform:scaleX(1) !important;}
   .work-btn{transition:background .2s,transform .2s;}
   .work-btn:hover{background:#d99384;transform:translateY(-2px);}
+  .nav-toggle{display:none;flex-direction:column;justify-content:center;gap:5px;width:28px;height:22px;background:none;border:none;cursor:pointer;padding:0;}
+  .nav-toggle span{display:block;width:100%;height:2px;background:#ece3d6;border-radius:2px;transition:transform .2s ease,opacity .2s ease;}
+  .nav-toggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+  .nav-toggle.open span:nth-child(2){opacity:0;}
+  .nav-toggle.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
   @media (max-width: 700px) {
     [style*="grid-template-columns"] { grid-template-columns: 1fr !important; }
+    .feature-row { flex-direction: column-reverse !important; }
+    #csBar > div { padding: 14px 7vw !important; }
+    #csBarScroll { align-items: center !important; }
+    .bar-step { gap: 0 !important; }
+    .bar-label { display: none !important; }
+    .bar-circle { width: 10px !important; height: 10px !important; }
+    .bar-conn { margin-top: 0 !important; }
+    nav { position: relative; }
+    .nav-toggle { display: flex; }
+    #navLinks { display: none !important; position: absolute; top: 100%; left: 0; right: 0; background: #15231c; flex-direction: column; align-items: flex-start; gap: 4px !important; padding: 8px 7vw 20px; border-bottom: 1px solid rgba(236,227,214,0.08); }
+    #navLinks.nav-open { display: flex !important; }
+    #navLinks .nav-link { padding: 10px 0; width: 100%; }
   }
 </style>
 </head>
@@ -44,7 +61,8 @@
 
 <nav style="display:flex;align-items:center;justify-content:space-between;padding:16px 7vw;min-height:1.85rem;background:#15231c;border-bottom:1px solid rgba(236,227,214,0.08);">
   <a href="index.html" style="display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:rgba(236,227,214,0.8);font-size:0.95rem;letter-spacing:0.02em;"><span class="cs-back-arrow">←</span> Home</a>
-  <div style="display:flex;gap:26px;">
+  <button id="navToggle" class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  <div id="navLinks" style="display:flex;gap:26px;">
     <a class="nav-link nav-active" href="work.html" style="font-size:0.95rem;letter-spacing:0.04em;color:rgba(236,227,214,0.78);text-decoration:none;">Case Studies</a>
     <a class="nav-link" href="resume.html" style="font-size:0.95rem;letter-spacing:0.04em;color:rgba(236,227,214,0.78);text-decoration:none;">Resume</a>
     <a class="nav-link" href="about.html" style="font-size:0.95rem;letter-spacing:0.04em;color:rgba(236,227,214,0.78);text-decoration:none;">About</a>
@@ -264,49 +282,49 @@
         <h2 style="font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(1.9rem,3.2vw,2.7rem);line-height:1.1;color:#1c2b22;margin-bottom:30px;text-wrap:balance;">The features technologists use every day.</h2>
         <div style="display:flex;flex-direction:column;gap:64px;">
 
-          <div style="display:flex;flex-wrap:wrap;gap:clamp(24px,4vw,48px);align-items:center;">
+          <div class="feature-row" style="display:flex;flex-wrap:wrap;gap:clamp(24px,4vw,48px);align-items:center;">
             <div style="flex:1 1 360px;min-width:230px;width:100%;border-radius:8px;padding:4px;background:#eef1ec;box-sizing:border-box;aspect-ratio:700/394;"><img src="images/summaries.gif" alt="Summaries" style="display:block;width:100%;height:100%;object-fit:contain;"></div>
             <div style="flex:1 1 220px;min-width:200px;">
               <div style="display:flex;gap:16px;align-items:stretch;"><svg width="10" height="64" viewBox="0 0 10 64" style="display:block;flex:0 0 auto;" aria-hidden="true"><path d="M5 0 Q0 8 5 16 T5 32 T5 48 T5 64" fill="none" stroke="#e6a99b" stroke-width="3" stroke-linecap="round"></path></svg><div><h3 style="font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(1.6rem,2.4vw,2rem);color:#1c2b22;margin-bottom:12px;">Summaries</h3><p style="font-size:1.02rem;line-height:1.74;color:rgba(28,43,34,0.8);text-wrap:pretty;">Aggregated data so technologists can spot reactivity patterns and validate a batch faster.</p></div></div>
             </div>
           </div>
 
-          <div style="display:flex;flex-wrap:wrap;gap:clamp(24px,4vw,48px);align-items:center;flex-direction:row-reverse;">
+          <div class="feature-row" style="display:flex;flex-wrap:wrap;gap:clamp(24px,4vw,48px);align-items:center;flex-direction:row-reverse;">
             <div style="flex:1 1 360px;min-width:230px;width:100%;border-radius:8px;padding:4px;background:#eef1ec;box-sizing:border-box;aspect-ratio:700/394;"><img src="images/highlights.gif" alt="Highlights" style="display:block;width:100%;height:100%;object-fit:contain;"></div>
             <div style="flex:1 1 220px;min-width:200px;">
               <div style="display:flex;gap:16px;align-items:stretch;"><svg width="10" height="64" viewBox="0 0 10 64" style="display:block;flex:0 0 auto;" aria-hidden="true"><path d="M5 0 Q0 8 5 16 T5 32 T5 48 T5 64" fill="none" stroke="#e6a99b" stroke-width="3" stroke-linecap="round"></path></svg><div><h3 style="font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(1.6rem,2.4vw,2rem);color:#1c2b22;margin-bottom:12px;">Highlights</h3><p style="font-size:1.02rem;line-height:1.74;color:rgba(28,43,34,0.8);text-wrap:pretty;">Manual and automatic highlighting to trace information across results and patient history.</p></div></div>
             </div>
           </div>
 
-          <div style="display:flex;flex-wrap:wrap;gap:clamp(24px,4vw,48px);align-items:center;">
+          <div class="feature-row" style="display:flex;flex-wrap:wrap;gap:clamp(24px,4vw,48px);align-items:center;">
             <div style="flex:1 1 360px;min-width:230px;width:100%;border-radius:8px;padding:4px;background:#eef1ec;box-sizing:border-box;aspect-ratio:700/394;"><img src="images/past-results.gif" alt="Past Results" style="display:block;width:100%;height:100%;object-fit:contain;"></div>
             <div style="flex:1 1 220px;min-width:200px;">
               <div style="display:flex;gap:16px;align-items:stretch;"><svg width="10" height="64" viewBox="0 0 10 64" style="display:block;flex:0 0 auto;" aria-hidden="true"><path d="M5 0 Q0 8 5 16 T5 32 T5 48 T5 64" fill="none" stroke="#e6a99b" stroke-width="3" stroke-linecap="round"></path></svg><div><h3 style="font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(1.6rem,2.4vw,2rem);color:#1c2b22;margin-bottom:12px;">Past Results</h3><p style="font-size:1.02rem;line-height:1.74;color:rgba(28,43,34,0.8);text-wrap:pretty;">Compares current results against past data, removing the need for extra tabs or paper records.</p></div></div>
             </div>
           </div>
 
-          <div style="display:flex;flex-wrap:wrap;gap:clamp(24px,4vw,48px);align-items:center;flex-direction:row-reverse;">
+          <div class="feature-row" style="display:flex;flex-wrap:wrap;gap:clamp(24px,4vw,48px);align-items:center;flex-direction:row-reverse;">
             <div style="flex:1 1 360px;min-width:230px;width:100%;border-radius:8px;padding:4px;background:#eef1ec;box-sizing:border-box;aspect-ratio:700/394;"><img src="images/antibody-history.gif" alt="Antibody History" style="display:block;width:100%;height:100%;object-fit:contain;"></div>
             <div style="flex:1 1 220px;min-width:200px;">
               <div style="display:flex;gap:16px;align-items:stretch;"><svg width="10" height="64" viewBox="0 0 10 64" style="display:block;flex:0 0 auto;" aria-hidden="true"><path d="M5 0 Q0 8 5 16 T5 32 T5 48 T5 64" fill="none" stroke="#e6a99b" stroke-width="3" stroke-linecap="round"></path></svg><div><h3 style="font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(1.6rem,2.4vw,2rem);color:#1c2b22;margin-bottom:12px;">Antibody History</h3><p style="font-size:1.02rem;line-height:1.74;color:rgba(28,43,34,0.8);text-wrap:pretty;">Plots trends for antigens relevant to the patient and donor, to support informed clinical decisions.</p></div></div>
             </div>
           </div>
 
-          <div style="display:flex;flex-wrap:wrap;gap:clamp(24px,4vw,48px);align-items:center;">
+          <div class="feature-row" style="display:flex;flex-wrap:wrap;gap:clamp(24px,4vw,48px);align-items:center;">
             <div style="flex:1 1 360px;min-width:230px;width:100%;border-radius:8px;padding:4px;background:#eef1ec;box-sizing:border-box;aspect-ratio:700/394;"><img src="images/patient-view.gif" alt="Patient View" style="display:block;width:100%;height:100%;object-fit:contain;"></div>
             <div style="flex:1 1 220px;min-width:200px;">
               <div style="display:flex;gap:16px;align-items:stretch;"><svg width="10" height="64" viewBox="0 0 10 64" style="display:block;flex:0 0 auto;" aria-hidden="true"><path d="M5 0 Q0 8 5 16 T5 32 T5 48 T5 64" fill="none" stroke="#e6a99b" stroke-width="3" stroke-linecap="round"></path></svg><div><h3 style="font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(1.6rem,2.4vw,2rem);color:#1c2b22;margin-bottom:12px;">Patient View</h3><p style="font-size:1.02rem;line-height:1.74;color:rgba(28,43,34,0.8);text-wrap:pretty;">A unified record of historical data, enhanced with APIs for a full virtual crossmatch experience.</p></div></div>
             </div>
           </div>
 
-          <div style="display:flex;flex-wrap:wrap;gap:clamp(24px,4vw,48px);align-items:center;flex-direction:row-reverse;">
+          <div class="feature-row" style="display:flex;flex-wrap:wrap;gap:clamp(24px,4vw,48px);align-items:center;flex-direction:row-reverse;">
             <div style="flex:1 1 360px;min-width:230px;width:100%;border-radius:8px;padding:4px;background:#eef1ec;box-sizing:border-box;aspect-ratio:700/480;"><img src="images/comments-logs.gif" alt="Comments &amp; Logs" style="display:block;width:100%;height:100%;object-fit:contain;"></div>
             <div style="flex:1 1 220px;min-width:200px;">
               <div style="display:flex;gap:16px;align-items:stretch;"><svg width="10" height="64" viewBox="0 0 10 64" style="display:block;flex:0 0 auto;" aria-hidden="true"><path d="M5 0 Q0 8 5 16 T5 32 T5 48 T5 64" fill="none" stroke="#e6a99b" stroke-width="3" stroke-linecap="round"></path></svg><div><h3 style="font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(1.6rem,2.4vw,2rem);color:#1c2b22;margin-bottom:12px;">Comments &amp; Logs</h3><p style="font-size:1.02rem;line-height:1.74;color:rgba(28,43,34,0.8);text-wrap:pretty;">Manual comments and automated activity logs for transparency and team collaboration.</p></div></div>
             </div>
           </div>
 
-          <div style="display:flex;flex-wrap:wrap;gap:clamp(24px,4vw,48px);align-items:center;">
+          <div class="feature-row" style="display:flex;flex-wrap:wrap;gap:clamp(24px,4vw,48px);align-items:center;">
             <div style="flex:1 1 360px;min-width:230px;width:100%;border-radius:8px;padding:4px;background:#eef1ec;box-sizing:border-box;aspect-ratio:700/394;"><img src="images/custom-reports.gif" alt="Custom Reports" style="display:block;width:100%;height:100%;object-fit:contain;"></div>
             <div style="flex:1 1 220px;min-width:200px;">
               <div style="display:flex;gap:16px;align-items:stretch;"><svg width="10" height="64" viewBox="0 0 10 64" style="display:block;flex:0 0 auto;" aria-hidden="true"><path d="M5 0 Q0 8 5 16 T5 32 T5 48 T5 64" fill="none" stroke="#e6a99b" stroke-width="3" stroke-linecap="round"></path></svg><div><h3 style="font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(1.6rem,2.4vw,2rem);color:#1c2b22;margin-bottom:12px;">Custom Reports</h3><p style="font-size:1.02rem;line-height:1.74;color:rgba(28,43,34,0.8);text-wrap:pretty;">Save assets during analysis to build reports on the go, without breaking from the workflow.</p></div></div>
@@ -483,6 +501,25 @@ document.addEventListener('DOMContentLoaded', function () {
     setTimeout(sync, 300);
   }
 });
+</script>
+<script>
+(function(){
+  var btn = document.getElementById('navToggle');
+  var links = document.getElementById('navLinks');
+  if (!btn || !links) return;
+  btn.addEventListener('click', function(){
+    var open = links.classList.toggle('nav-open');
+    btn.classList.toggle('open', open);
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  links.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      links.classList.remove('nav-open');
+      btn.classList.remove('open');
+      btn.setAttribute('aria-expanded', 'false');
+    });
+  });
+})();
 </script>
 </body>
 </html>
