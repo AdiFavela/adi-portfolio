@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MatchX Training Tool — Adi Favela</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Fraunces:ital,opsz,wght@1,9..144,300&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { background: #faf7f1; color: #1c2b22; font-family: 'DM Sans', sans-serif; font-weight: 300; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+  .bar-circle:hover { border-color: #c1694f !important; }
+  .bar-label:hover { color: #1c2b22 !important; }
+  #csBarScroll { scrollbar-width: none; -ms-overflow-style: none; }
+  #csBarScroll::-webkit-scrollbar { display: none; }
+  .cs-back-arrow { display: inline-block; transition: transform .25s ease; }
+  a:hover > .cs-back-arrow { transform: translateX(-4px); }
+  .nav-link{position:relative;transition:color .2s ease;}
+  .nav-link::after{content:'';position:absolute;left:0;right:0;bottom:-4px;height:1px;background:#c1694f;transform:scaleX(0);transform-origin:left;transition:transform .28s cubic-bezier(.2,.7,.2,1);}
+  .nav-link:hover{color:#c1694f;}
+  .nav-link:hover::after{transform:scaleX(1);}
+  .nav-active{color:#c1694f !important;font-weight:500 !important;}
+  .nav-active::after{transform:scaleX(1) !important;}
+  .work-btn{transition:background .2s,transform .2s;}
+  .work-btn:hover{background:#d99384;transform:translateY(-2px);}
+</style>
+</head>
+<body>
+
+<nav style="display:flex;align-items:center;justify-content:space-between;padding:16px 7vw;min-height:1.85rem;background:#15231c;border-bottom:1px solid rgba(236,227,214,0.08);">
+  <a href="index.html" style="display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:rgba(236,227,214,0.8);font-size:0.95rem;letter-spacing:0.02em;"><span class="cs-back-arrow">←</span> Home</a>
+  <div style="display:flex;gap:26px;">
+    <a class="nav-link" href="work.html" style="font-size:0.95rem;letter-spacing:0.04em;color:rgba(236,227,214,0.78);text-decoration:none;">Case Studies</a>
+    <a class="nav-link" href="resume.html" style="font-size:0.95rem;letter-spacing:0.04em;color:rgba(236,227,214,0.78);text-decoration:none;">Resume</a>
+    <a class="nav-link" href="about.html" style="font-size:0.95rem;letter-spacing:0.04em;color:rgba(236,227,214,0.78);text-decoration:none;">About</a>
+  </div>
+</nav>
+
+<!-- ───────────────────────── HERO ───────────────────────── -->
+<section style="position:relative;background:#15231c;padding:76px 0 60px;overflow:hidden;">
+  <div style="max-width:1120px;margin:0 auto;padding:0 7vw;">
+    <div style="display:flex;gap:clamp(24px,4vw,64px);align-items:flex-start;">
+      <div style="flex:1 1 auto;min-width:0;">
+    <span style="font-size:0.78rem;letter-spacing:0.24em;text-transform:uppercase;color:#e6a99b;display:block;margin-bottom:20px;">Case Study</span>
+    <h1 style="font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(2.6rem,5.4vw,4.6rem);line-height:1.04;letter-spacing:-0.01em;color:#ece3d6;max-width:14ch;text-wrap:balance;margin-bottom:22px;">MatchX Training Tool</h1>
+    <p style="font-size:1.15rem;line-height:1.6;color:rgba(236,227,214,0.8);max-width:56ch;text-wrap:pretty;margin-bottom:34px;">An in-app training experience that guides histocompatibility lab professionals through a newly unified platform — with contextual guidance cards, on-screen spotlights, and self-paced chapters.</p>
+    <div style="display:flex;flex-wrap:wrap;gap:40px;padding-top:26px;border-top:1px solid rgba(236,227,214,0.12);">
+      <div><div style="font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(236,227,214,0.55);margin-bottom:8px;">Role</div><div style="font-size:1rem;color:#ece3d6;">Lead Product Designer</div></div>
+      <div><div style="font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(236,227,214,0.55);margin-bottom:8px;">Timeline</div><div style="font-size:1rem;color:#ece3d6;">1 year 6 months · 2025- 2026</div></div>
+      <div><div style="font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(236,227,214,0.55);margin-bottom:8px;">Platform</div><div style="font-size:1rem;color:#ece3d6;">Web · Embedded&nbsp;</div></div>
+    </div>
+      </div>
+    </div>
+  </div>
+  <div style="max-width:1120px;margin:40px auto 0;padding:0 7vw;">
+    <div style="display:flex;gap:clamp(24px,4vw,64px);align-items:flex-start;">
+      <div style="flex:1 1 auto;min-width:0;">
+    <div id="trainingHero" style="position:relative;width:100%;aspect-ratio:16/9;border-radius:8px;overflow:hidden;">
+      <img src="uploads/BA-Plate-5.png" alt="Training tool screen" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;transition:opacity 1.2s ease;opacity:1;">
+      <img src="uploads/Start-694962c2.png" alt="Training tool screen" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;transition:opacity 1.2s ease;opacity:0;">
+      <img src="uploads/SSO-Scenario1-19.png" alt="Training tool screen" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;transition:opacity 1.2s ease;opacity:0;">
+      <img src="uploads/BO-Patients-9.png" alt="Training tool screen" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;transition:opacity 1.2s ease;opacity:0;">
+      <img src="uploads/BO-Lots-09.png" alt="Training tool screen" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;transition:opacity 1.2s ease;opacity:0;">
+      <img src="uploads/BO-Interface-10.png" alt="Training tool screen" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;transition:opacity 1.2s ease;opacity:0;">
+    </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────────────────── HORIZONTAL PROGRESS BAR ───────────────────────── -->
+<div id="csBar" style="position:sticky;top:0;z-index:60;background:rgba(244,239,227,0.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid rgba(28,43,34,0.08);">
+  <div style="max-width:1120px;margin:0 auto;padding:60px 7vw;">
+    <div style="position:relative;">
+      <div id="csBarScroll" style="display:flex;align-items:flex-start;overflow-x:auto;padding:2px 0;">
+        <div class="bar-step" style="display:flex;flex-direction:column;align-items:center;gap:10px;flex:0 0 auto;"><a class="bar-circle" href="#overview" data-target="overview" style="width:30px;height:30px;border-radius:50%;border:2px solid rgba(28,43,34,0.25);display:block;background:transparent;text-decoration:none;transition:border-color .25s ease,transform .25s ease,box-shadow .25s ease;"></a><a class="bar-label" href="#overview" data-target="overview" style="font-size:0.8rem;letter-spacing:0.08em;text-transform:uppercase;color:rgba(28,43,34,0.5);text-decoration:none;white-space:nowrap;transition:color .25s ease;">Overview</a></div>
+        <div class="bar-conn" style="flex:1 1 auto;min-width:22px;height:2px;margin-top:16px;background:rgba(28,43,34,0.14);transition:background .3s ease;"></div>
+        <div class="bar-step" style="display:flex;flex-direction:column;align-items:center;gap:10px;flex:0 0 auto;"><a class="bar-circle" href="#approach" data-target="approach" style="width:30px;height:30px;border-radius:50%;border:2px solid rgba(28,43,34,0.25);display:block;background:transparent;text-decoration:none;transition:border-color .25s ease,transform .25s ease,box-shadow .25s ease;"></a><a class="bar-label" href="#approach" data-target="approach" style="font-size:0.8rem;letter-spacing:0.08em;text-transform:uppercase;color:rgba(28,43,34,0.5);text-decoration:none;white-space:nowrap;transition:color .25s ease;">Approach</a></div>
+        <div class="bar-conn" style="flex:1 1 auto;min-width:22px;height:2px;margin-top:16px;background:rgba(28,43,34,0.14);transition:background .3s ease;"></div>
+        <div class="bar-step" style="display:flex;flex-direction:column;align-items:center;gap:10px;flex:0 0 auto;"><a class="bar-circle" href="#step-1" data-target="step-1" style="width:30px;height:30px;border-radius:50%;border:2px solid rgba(28,43,34,0.25);display:block;background:transparent;text-decoration:none;transition:border-color .25s ease,transform .25s ease,box-shadow .25s ease;"></a><a class="bar-label" href="#step-1" data-target="step-1" style="font-size:0.8rem;letter-spacing:0.08em;text-transform:uppercase;color:rgba(28,43,34,0.5);text-decoration:none;white-space:nowrap;transition:color .25s ease;">Discover</a></div>
+        <div class="bar-conn" style="flex:1 1 auto;min-width:22px;height:2px;margin-top:16px;background:rgba(28,43,34,0.14);transition:background .3s ease;"></div>
+        <div class="bar-step" style="display:flex;flex-direction:column;align-items:center;gap:10px;flex:0 0 auto;"><a class="bar-circle" href="#step-2" data-target="step-2" style="width:30px;height:30px;border-radius:50%;border:2px solid rgba(28,43,34,0.25);display:block;background:transparent;text-decoration:none;transition:border-color .25s ease,transform .25s ease,box-shadow .25s ease;"></a><a class="bar-label" href="#step-2" data-target="step-2" style="font-size:0.8rem;letter-spacing:0.08em;text-transform:uppercase;color:rgba(28,43,34,0.5);text-decoration:none;white-space:nowrap;transition:color .25s ease;">Define</a></div>
+        <div class="bar-conn" style="flex:1 1 auto;min-width:22px;height:2px;margin-top:16px;background:rgba(28,43,34,0.14);transition:background .3s ease;"></div>
+        <div class="bar-step" style="display:flex;flex-direction:column;align-items:center;gap:10px;flex:0 0 auto;"><a class="bar-circle" href="#step-3" data-target="step-3" style="width:30px;height:30px;border-radius:50%;border:2px solid rgba(28,43,34,0.25);display:block;background:transparent;text-decoration:none;transition:border-color .25s ease,transform .25s ease,box-shadow .25s ease;"></a><a class="bar-label" href="#step-3" data-target="step-3" style="font-size:0.8rem;letter-spacing:0.08em;text-transform:uppercase;color:rgba(28,43,34,0.5);text-decoration:none;white-space:nowrap;transition:color .25s ease;">Features</a></div>
+        <div class="bar-conn" style="flex:1 1 auto;min-width:22px;height:2px;margin-top:16px;background:rgba(28,43,34,0.14);transition:background .3s ease;"></div>
+        <div class="bar-step" style="display:flex;flex-direction:column;align-items:center;gap:10px;flex:0 0 auto;"><a class="bar-circle" href="#step-4" data-target="step-4" style="width:30px;height:30px;border-radius:50%;border:2px solid rgba(28,43,34,0.25);display:block;background:transparent;text-decoration:none;transition:border-color .25s ease,transform .25s ease,box-shadow .25s ease;"></a><a class="bar-label" href="#step-4" data-target="step-4" style="font-size:0.8rem;letter-spacing:0.08em;text-transform:uppercase;color:rgba(28,43,34,0.5);text-decoration:none;white-space:nowrap;transition:color .25s ease;">Deliver</a></div>
+        <div class="bar-conn" style="flex:1 1 auto;min-width:22px;height:2px;margin-top:16px;background:rgba(28,43,34,0.14);transition:background .3s ease;"></div>
+        <div class="bar-step" style="display:flex;flex-direction:column;align-items:center;gap:10px;flex:0 0 auto;"><a class="bar-circle" href="#outcome" data-target="outcome" style="width:30px;height:30px;border-radius:50%;border:2px solid rgba(28,43,34,0.25);display:block;background:transparent;text-decoration:none;transition:border-color .25s ease,transform .25s ease,box-shadow .25s ease;"></a><a class="bar-label" href="#outcome" data-target="outcome" style="font-size:0.8rem;letter-spacing:0.08em;text-transform:uppercase;color:rgba(28,43,34,0.5);text-decoration:none;white-space:nowrap;transition:color .25s ease;">Outcome</a></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ───────────────────────── BODY ───────────────────────── -->
+<div style="background: #f4efe3;">
+    <main id="csMain" style="max-width:1120px;margin:0 auto;padding:64px 7vw 0;">
+
+      <!-- OVERVIEW -->
+      <section id="overview" style="scroll-margin-top:84px;">
+        <span style="font-size:clamp(2.4rem,3.6vw,3.2rem);letter-spacing:0.01em;text-transform:uppercase;color:#c1694f;display:block;margin-bottom:12px;line-height:1.02;">Overview</span>
+        <h2 style="font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(1.9rem,3.2vw,2.7rem);line-height:1.1;color:#1c2b22;margin-bottom:24px;text-wrap:balance;">Designing a Guided Transition to a New Platform</h2>
+        <div>
+          <p style="font-size:1.05rem;line-height:1.78;color:rgba(28,43,34,0.84);margin-bottom:16px;text-wrap:pretty;">After a major redesign unified multiple histocompatibility assays into one platform, our team needed a way to help users transition confidently to the new experience.&nbsp;</p><p style="font-size:1.05rem;line-height:1.78;color:rgba(28,43,34,0.84);margin-bottom:16px;text-wrap:pretty;">The training needed to support experienced lab professionals while staying approachable for new users, helping them understand both what changed and why.</p>
+          <p style="font-size:1.05rem;line-height:1.78;color:rgba(28,43,34,0.84);text-wrap:pretty;">Because the software supports complex transplantation workflows, the experience had to simplify highly technical concepts without losing accuracy. The result was a modular learning system that made onboarding more intuitive and scalable for an international audience.</p>
+        </div>
+      </section>
+
+      <!-- CHALLENGE -->
+      <section id="challenge" style="scroll-margin-top:84px;margin-top:40px;">
+        <span style="font-family:'Fraunces',serif;font-style:italic;font-size:clamp(2.15rem,3.4vw,2.95rem);letter-spacing:0.005em;color:#5f7d68;display:flex;align-items:center;gap:14px;margin-bottom:12px;line-height:1.05;"><span style="width:22px;height:1px;background:#5f7d68;flex:0 0 auto;"></span>The Challenge</span>
+        <h2 style="font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(1.9rem,3.2vw,2.7rem);line-height:1.1;color:#1c2b22;margin-bottom:24px;text-wrap:balance;">This wasn't simply a product walkthrough</h2>
+        <p style="font-size:1.05rem;line-height:1.78;color:rgba(28,43,34,0.84);margin-bottom:26px;max-width:62ch;text-wrap:pretty;">The redesigned platform combined multiple tools and workflows into one cohesive application, introducing entirely new ways of completing familiar tasks. Many long-time users were transitioning from fragmented processes spread across several applications to a single, holistic workflow centered around the patient.</p>
+        <div style="display:flex;flex-direction:column;gap:14px;">
+          <div style="display:flex;gap:14px;align-items:flex-start;"><span style="color:#c1694f;font-size:1.1rem;line-height:1.5;">—</span><span style="font-size:1rem;line-height:1.6;color:rgba(28,43,34,0.88);">Balance education with efficiency &amp; Demonstrate realistic laboratory scenarios</span></div>
+          <div style="display:flex;gap:14px;align-items:flex-start;"><span style="color:#c1694f;font-size:1.1rem;line-height:1.5;">—</span><span style="font-size:1rem;line-height:1.6;color:rgba(28,43,34,0.88);">Introduce unfamiliar functionality clearly &amp; Reinforce best practices without overwhelming users</span></div>
+          <div style="display:flex;gap:14px;align-items:flex-start;"><span style="color:#c1694f;font-size:1.1rem;line-height:1.5;">—</span><span style="font-size:1rem;line-height:1.6;color:rgba(28,43,34,0.88);">Accommodate users with varying levels of technical expertise</span></div>
+        </div>
+      </section>
+
+      <!-- SOLUTION -->
+      <section id="solution" style="scroll-margin-top:84px;margin-top:40px;background:#15231c;margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw);width:100vw;padding:56px 0;">
+        <div style="max-width:1120px;margin:0 auto;padding:0 7vw;">
+        <span style="font-family:'Fraunces',serif;font-style:italic;font-size:clamp(2.15rem,3.4vw,2.95rem);letter-spacing:0.005em;color:#8fae98;display:flex;align-items:center;gap:14px;margin-bottom:12px;line-height:1.05;"><span style="width:22px;height:1px;background:#8fae98;flex:0 0 auto;"></span>The Solution</span>
+        <h2 style="font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(1.9rem,3.2vw,2.7rem);line-height:1.1;color:#ece3d6;margin-bottom:24px;text-wrap:balance;">Success depended on close collaboration across disciplines.</h2>
+        <p style="font-size:1.05rem;line-height:1.78;color:rgba(236,227,214,0.82);margin-bottom:30px;max-width:62ch;text-wrap:pretty;">Partnering closely with subject-matter experts, product managers, and engineers, I designed an in-application training layer. Contextual guidance cards paired with on-screen spotlights walk users through realistic laboratory scenarios, while a modular chapter structure lets people learn at their own pace and return exactly where they left off.</p>
+        <img src="uploads/screenshots_dissolve.gif" alt="Guided training walkthrough" style="display:block;width:100%;height:auto;">
+        </div>
+      </section>
+
+      <!-- APPROACH -->
+      <section id="approach" style="scroll-margin-top:84px;margin-top:56px;padding-top:56px;border-top:1px solid rgba(28,43,34,0.08);">
+        <span style="font-size:clamp(2.4rem,3.6vw,3.2rem);letter-spacing:0.01em;text-transform:uppercase;color:#c1694f;display:block;margin-bottom:12px;line-height:1.02;">Approach</span>
+        <h2 style="font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(1.9rem,3.2vw,2.7rem);line-height:1.1;color:#1c2b22;margin-bottom:30px;text-wrap:balance;">Tools and team.</h2>
+        <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-bottom:30px;">
+          <div style="padding-right:24px;border-right:1px solid rgba(28,43,34,0.14);">
+            <div style="font-size:0.72rem;letter-spacing:0.16em;text-transform:uppercase;color:#5f7d68;margin-bottom:16px;">Tools</div>
+            <div style="display:flex;flex-wrap:wrap;gap:8px;">
+              <span style="padding:6px 13px;border-radius:999px;border:1px solid rgba(28,43,34,0.18);font-size:0.78rem;letter-spacing:0.04em;color:#1c2b22;">Figma</span>
+              <span style="padding:6px 13px;border-radius:999px;border:1px solid rgba(28,43,34,0.18);font-size:0.78rem;letter-spacing:0.04em;color:#1c2b22;">Loom</span><span style="padding:6px 13px;border-radius:999px;border:1px solid rgba(28,43,34,0.18);font-size:0.78rem;letter-spacing:0.04em;color:#1c2b22;">Click-up</span><span style="padding:6px 13px;border-radius:999px;border:1px solid rgba(28,43,34,0.18);font-size:0.78rem;letter-spacing:0.04em;color:#1c2b22;">Microsoft Teams</span><span style="padding:6px 13px;border-radius:999px;border:1px solid rgba(28,43,34,0.18);font-size:0.78rem;letter-spacing:0.04em;color:#1c2b22;">Protopie</span><span style="padding:6px 13px;border-radius:999px;border:1px solid rgba(28,43,34,0.18);font-size:0.78rem;letter-spacing:0.04em;color:#1c2b22;">Slack</span>
+            </div>
+          </div>
+          <div>
+            <div style="font-size:0.72rem;letter-spacing:0.16em;text-transform:uppercase;color:#5f7d68;margin-bottom:16px;">Team</div>
+            <div style="display:flex;flex-direction:column;gap:8px;font-size:0.95rem;color:rgba(28,43,34,0.88);line-height:1.5;">
+              <span>2 Product Designers</span>
+              <span>1 Product Trainer</span><span>2 Software Engineers</span>
+              <span>1 PM · 1 Researcher&nbsp;<span>· 1 Manager</span></span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- KICKOFF & TASKFLOWS -->
+      <section id="kickoff" style="scroll-margin-top:84px;margin-top:40px;">
+        <span style="font-family:'Fraunces',serif;font-style:italic;font-size:clamp(2.15rem,3.4vw,2.95rem);letter-spacing:0.005em;color:#5f7d68;display:flex;align-items:center;gap:14px;margin-bottom:12px;line-height:1.05;"><span style="width:22px;height:1px;background:#5f7d68;flex:0 0 auto;"></span>Kickoff &amp; Taskflows</span>
+        <h2 style="font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(1.9rem,3.2vw,2.7rem);line-height:1.1;color:#1c2b22;margin-bottom:24px;text-wrap:balance;">Aligning on scope, then mapping the task flows.</h2>
+        <p style="font-size:1.05rem;line-height:1.78;color:rgba(28,43,34,0.84);margin-bottom:24px;max-width:62ch;text-wrap:pretty;">The kickoff aligned the design team with Werfen's subject-matter experts on a single goal: build the first hands-on introduction to the new MatchX software as part of the Technical Training Module. The tool needed to serve technologists and customers, sales reps, and technical support — walking each through the platform's structure and letting them complete realistic mock-tasks in a live demo UI.</p>
+        <p style="font-size:1.05rem;line-height:1.78;color:rgba(28,43,34,0.84);margin-bottom:24px;max-width:62ch;text-wrap:pretty;">Working from real lab data provided by the SMEs, we mapped the experience into three scenario tracks — then sequenced results from the least to most complex so users build confidence before tackling edge cases.</p>
+        <div style="display:flex;flex-direction:column;gap:14px;margin-bottom:30px;">
+          <div style="display:flex;gap:14px;align-items:flex-start;"><span style="color:#c1694f;font-size:1.1rem;line-height:1.5;">—</span><span style="font-size:1rem;line-height:1.6;color:rgba(28,43,34,0.88);"><strong style="color:#1c2b22;font-weight:500;">Main Navigation</strong> — worklist, patients, and lots; settings and file management; importing a lot and the create-batch flow, starting with the happy path.</span></div>
+          <div style="display:flex;gap:14px;align-items:flex-start;"><span style="color:#c1694f;font-size:1.1rem;line-height:1.5;">—</span><span style="font-size:1rem;line-height:1.6;color:rgba(28,43,34,0.88);"><strong style="color:#1c2b22;font-weight:500;">Assays</strong> — working across both antibody-detection and typing assays: assay-specific settings, creating and rerunning batches (including a deliberate failed batch), and reviewing results from the simplest cases to the most complex.</span></div>
+          <div style="display:flex;gap:14px;align-items:flex-start;"><span style="color:#c1694f;font-size:1.1rem;line-height:1.5;">—</span><span style="font-size:1rem;line-height:1.6;color:rgba(28,43,34,0.88);"><strong style="color:#1c2b22;font-weight:500;">Patient View</strong> — configuring API settings before moving into patient-level activities.</span></div>
+        </div>
+        <img src="uploads/taskflows.gif" alt="Taskflow diagram" style="display:block;width:100%;max-width:62ch;height:auto;border-radius:4px;">
+      </section>
+
+      <!-- PROCESS STEP 01 -->
+      <section id="step-1" style="scroll-margin-top:84px;margin-top:64px;padding-top:56px;border-top:1px solid rgba(28,43,34,0.08);">
+        <div>
+          <div style="flex:1 1 300px;min-width:260px;">
+            <span style="font-size:clamp(2.4rem,3.6vw,3.2rem);letter-spacing:0.01em;text-transform:uppercase;color:#c1694f;display:block;margin-bottom:12px;line-height:1.02;">Discover</span>
+            <h2 style="font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(1.9rem,3.2vw,2.7rem);line-height:1.1;color:#1c2b22;margin-bottom:16px;text-wrap:balance;">Understanding how labs learn today.</h2>
+            <p style="font-size:1.02rem;line-height:1.74;color:rgba(28,43,34,0.82);text-wrap:pretty;">Discovery centered on how histocompatibility labs currently learn and train — the methods teams rely on, the gaps in existing training, and what they expected from a demo tool. These conversations set the requirements for a self-paced, scenario-driven experience grounded in real laboratory work.</p>
+          </div>
+          <img src="uploads/discovery_animated.gif" alt="Discovery highlights" style="display:block;width:100%;height:auto;margin-top:24px;">
+        </div>
+      </section>
+
+      <!-- PROCESS STEP 02 -->
+      <section id="step-2" style="scroll-margin-top:84px;margin-top:64px;padding-top:56px;border-top:1px solid rgba(28,43,34,0.08);">
+        <div>
+          <div style="flex:1 1 300px;min-width:260px;">
+            <span style="font-size:clamp(2.4rem,3.6vw,3.2rem);letter-spacing:0.01em;text-transform:uppercase;color:#c1694f;display:block;margin-bottom:12px;line-height:1.02;">Define</span>
+            <h2 style="font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(1.9rem,3.2vw,2.7rem);line-height:1.1;color:#1c2b22;margin-bottom:16px;text-wrap:balance;">Showing people what's new — and where the old still lives.</h2>
+            <p style="font-size:1.02rem;line-height:1.74;color:rgba(28,43,34,0.82);text-wrap:pretty;">Defining the training meant talking directly with stakeholders, clients, and subject matter experts — in labs and at conferences — to understand what actually needed explaining. The unified platform introduced brand-new tools and newly integrated third-party APIs, but it also carried over familiar functionality that technologists needed to relocate. On top of that, every lab configures and customizes the software differently, so the training had to speak to both the new capabilities and the flexibility to make the tool your own.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROCESS STEP 03 -->
+      <section id="step-3" style="scroll-margin-top:84px;margin-top:64px;padding-top:56px;border-top:1px solid rgba(28,43,34,0.08);">
+        <span style="font-size:clamp(2.4rem,3.6vw,3.2rem);letter-spacing:0.01em;text-transform:uppercase;color:#c1694f;display:block;margin-bottom:12px;line-height:1.02;">Key Features</span>
+        <h2 style="font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(1.9rem,3.2vw,2.7rem);line-height:1.1;color:#1c2b22;margin-bottom:30px;text-wrap:balance;">The features that guide every user through it.</h2>
+        <div style="display:flex;flex-direction:column;gap:64px;">
+
+          <div style="display:flex;flex-wrap:wrap;gap:clamp(24px,4vw,48px);align-items:center;">
+            <div style="flex:1 1 360px;min-width:230px;width:100%;border-radius:4px;background:#eef1ec;box-sizing:border-box;aspect-ratio:700/394;overflow:hidden;"><img src="uploads/main_navigation.gif" alt="Main Navigation" style="display:block;width:100%;height:100%;object-fit:contain;"></div>
+            <div style="flex:1 1 220px;min-width:200px;">
+              <div style="display:flex;gap:16px;align-items:stretch;"><svg width="10" height="64" viewBox="0 0 10 64" style="display:block;flex:0 0 auto;" aria-hidden="true"><path d="M5 0 Q0 8 5 16 T5 32 T5 48 T5 64" fill="none" stroke="#e6a99b" stroke-width="3" stroke-linecap="round"></path></svg><div><h3 style="font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(1.6rem,2.4vw,2rem);color:#1c2b22;margin-bottom:12px;">Main Navigation</h3><p style="font-size:1.02rem;line-height:1.74;color:rgba(28,43,34,0.88);text-wrap:pretty;">A navigation that helps users pick up right where they left off and tracks progress through the module.</p></div></div>
+            </div>
+          </div>
+
+          <div style="display:flex;flex-wrap:wrap;gap:clamp(24px,4vw,48px);align-items:center;flex-direction:row-reverse;">
+            <div style="flex:1 1 360px;min-width:230px;width:100%;border-radius:4px;background:#eef1ec;box-sizing:border-box;aspect-ratio:700/394;overflow:hidden;"><img src="uploads/nav_between_scenarios.gif" alt="Scenario Navigation" style="display:block;width:100%;height:100%;object-fit:contain;"></div>
+            <div style="flex:1 1 220px;min-width:200px;">
+              <div style="display:flex;gap:16px;align-items:stretch;"><svg width="10" height="64" viewBox="0 0 10 64" style="display:block;flex:0 0 auto;" aria-hidden="true"><path d="M5 0 Q0 8 5 16 T5 32 T5 48 T5 64" fill="none" stroke="#e6a99b" stroke-width="3" stroke-linecap="round"></path></svg><div><h3 style="font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(1.6rem,2.4vw,2rem);color:#1c2b22;margin-bottom:12px;">Scenario Navigation</h3><p style="font-size:1.02rem;line-height:1.74;color:rgba(28,43,34,0.88);text-wrap:pretty;">Move between scenario tracks at your own pace, jumping back to an earlier one whenever needed.</p></div></div>
+            </div>
+          </div>
+
+          <div style="display:flex;flex-wrap:wrap;gap:clamp(24px,4vw,48px);align-items:center;">
+            <div style="flex:1 1 360px;min-width:230px;width:100%;border-radius:4px;background:#eef1ec;box-sizing:border-box;aspect-ratio:700/394;overflow:hidden;"><img src="uploads/completion_tracking.gif" alt="Interactive Elements" style="display:block;width:100%;height:100%;object-fit:contain;"></div>
+            <div style="flex:1 1 220px;min-width:200px;">
+              <div style="display:flex;gap:16px;align-items:stretch;"><svg width="10" height="64" viewBox="0 0 10 64" style="display:block;flex:0 0 auto;" aria-hidden="true"><path d="M5 0 Q0 8 5 16 T5 32 T5 48 T5 64" fill="none" stroke="#e6a99b" stroke-width="3" stroke-linecap="round"></path></svg><div><h3 style="font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(1.6rem,2.4vw,2rem);color:#1c2b22;margin-bottom:12px;">Interactive Elements</h3><p style="font-size:1.02rem;line-height:1.74;color:rgba(28,43,34,0.88);text-wrap:pretty;">Hands-on checkpoints that ask users to complete each action themselves before moving on.</p></div></div>
+            </div>
+          </div>
+
+          <div style="display:flex;flex-wrap:wrap;gap:clamp(24px,4vw,48px);align-items:center;flex-direction:row-reverse;">
+            <div style="flex:1 1 360px;min-width:230px;width:100%;border-radius:4px;background:#eef1ec;box-sizing:border-box;aspect-ratio:700/394;overflow:hidden;"><img src="uploads/spot_highlights.gif" alt="Spot Highlights" style="display:block;width:100%;height:100%;object-fit:contain;"></div>
+            <div style="flex:1 1 220px;min-width:200px;">
+              <div style="display:flex;gap:16px;align-items:stretch;"><svg width="10" height="64" viewBox="0 0 10 64" style="display:block;flex:0 0 auto;" aria-hidden="true"><path d="M5 0 Q0 8 5 16 T5 32 T5 48 T5 64" fill="none" stroke="#e6a99b" stroke-width="3" stroke-linecap="round"></path></svg><div><h3 style="font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(1.6rem,2.4vw,2rem);color:#1c2b22;margin-bottom:12px;">Spot Highlights</h3><p style="font-size:1.02rem;line-height:1.74;color:rgba(28,43,34,0.88);text-wrap:pretty;">Spotlights that focus attention on the exact part of the screen a step is talking about.</p></div></div>
+            </div>
+          </div>
+
+          <div style="display:flex;flex-wrap:wrap;gap:clamp(24px,4vw,48px);align-items:center;">
+            <div style="flex:1 1 360px;min-width:230px;width:100%;border-radius:4px;background:#eef1ec;box-sizing:border-box;aspect-ratio:700/394;overflow:hidden;"><img src="uploads/visual_legend.gif" alt="What's New" style="display:block;width:100%;height:100%;object-fit:contain;"></div>
+            <div style="flex:1 1 220px;min-width:200px;">
+              <div style="display:flex;gap:16px;align-items:stretch;"><svg width="10" height="64" viewBox="0 0 10 64" style="display:block;flex:0 0 auto;" aria-hidden="true"><path d="M5 0 Q0 8 5 16 T5 32 T5 48 T5 64" fill="none" stroke="#e6a99b" stroke-width="3" stroke-linecap="round"></path></svg><div><h3 style="font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(1.6rem,2.4vw,2rem);color:#1c2b22;margin-bottom:12px;">What's New</h3><p style="font-size:1.02rem;line-height:1.74;color:rgba(28,43,34,0.88);text-wrap:pretty;">A visual legend introduced up front to walk users through the elements that are completely new to the software.</p></div></div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- PROCESS STEP 04 -->
+      <section id="step-4" style="scroll-margin-top:84px;margin-top:64px;padding-top:56px;border-top:1px solid rgba(28,43,34,0.08);">
+        <span style="font-size:clamp(2.4rem,3.6vw,3.2rem);letter-spacing:0.01em;text-transform:uppercase;color:#c1694f;display:block;margin-bottom:12px;line-height:1.02;">Deliver</span>
+        <h2 style="font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(1.9rem,3.2vw,2.7rem);line-height:1.1;color:#1c2b22;margin-bottom:16px;text-wrap:balance;">Testing &amp; handoff.</h2>
+        <p style="font-size:1.02rem;line-height:1.74;color:rgba(28,43,34,0.82);max-width:none;text-wrap:pretty;">The final experience is organized into modular chapters — Basic Overview, Create a Batch, Assays, and Patient View — each with its own topics and progress tracking, so labs can onboard new staff and cross-train at their own pace.</p>
+        <div style="font-size:0.72rem;letter-spacing:0.16em;text-transform:uppercase;color:#5f7d68;margin:28px 0 12px;">The deliverable · live prototype</div>
+        <iframe title="MatchX Training Tool prototype" src="https://embed.figma.com/proto/JYyA1IbSV0sG0N5rsGLZZS/Training-Tool?node-id=1-22710&viewport=-5602%2C-261%2C0.07&scaling=contain&content-scaling=fixed&page-id=1%3A2&embed-host=share" style="display:block;width:100%;max-width:100%;height:clamp(420px,52vw,720px);border:none;" allowfullscreen></iframe>
+      </section>
+
+      <!-- OUTCOME -->
+      <section id="outcome" style="scroll-margin-top:84px;margin-top:64px;background:#15231c;margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw);width:100vw;padding:56px 0;">
+        <div style="max-width:1120px;margin:0 auto;padding:0 7vw;">
+        <span style="font-size:clamp(2.4rem,3.6vw,3.2rem);letter-spacing:0.01em;text-transform:uppercase;color:#c1694f;display:block;margin-bottom:12px;line-height:1.02;">Outcome</span>
+        <h2 style="font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(1.9rem,3.2vw,2.7rem);line-height:1.1;color:#ece3d6;margin-bottom:30px;text-wrap:balance;">The impact this work delivered.</h2>
+        <p style="font-size:1.05rem;line-height:1.78;color:rgba(236,227,214,0.88);margin-bottom:24px;max-width:62ch;text-wrap:pretty;">The tool is widely used today. It's currently training technicians out in the field, and sales reps use it to showcase the platform's new tools, integrated APIs, and workflows to prospective customers. Testing also validated the scenario structure itself — two scenarios per assay module turned out to be the right number, giving users enough range to build confidence without overloading any single module.</p>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:34px;">
+          <div style="background:#1a2a22;border:1px solid rgba(236,227,214,0.1);border-radius:18px;padding:26px;">
+            <div style="font-family:'Cormorant Garamond',serif;font-size:2.8rem;color:#6ca417;line-height:1;margin-bottom:8px;text-shadow:0 0 22px rgba(108,164,23,0.35);">3</div>
+            <div style="font-size:0.9rem;line-height:1.5;color:rgba(236,227,214,0.6);">Scenario tracks mapped from real lab data — Main Navigation, Assays, and Patient View.</div>
+          </div>
+          <div style="background:#1a2a22;border:1px solid rgba(236,227,214,0.1);border-radius:18px;padding:26px;">
+            <div style="font-family:'Cormorant Garamond',serif;font-size:2.8rem;color:#c1694f;line-height:1;margin-bottom:8px;">2</div>
+            <div style="font-size:0.9rem;line-height:1.5;color:rgba(236,227,214,0.6);">Scenarios per assay module — validated as the right number for building confidence.</div>
+          </div>
+          <div style="background:#1a2a22;border:1px solid rgba(236,227,214,0.1);border-radius:18px;padding:26px;">
+            <div style="font-family:'Cormorant Garamond',serif;font-size:2.8rem;color:#c1694f;line-height:1;margin-bottom:8px;">4</div>
+            <div style="font-size:0.9rem;line-height:1.5;color:rgba(236,227,214,0.6);">Modular chapters — Basic Overview, Create a Batch, Assays, and Patient View — each self-paced.</div>
+          </div>
+        </div>
+        <p style="font-family:'Fraunces',serif;font-style:italic;font-weight:300;font-size:1.25rem;line-height:1.6;color:rgba(236,227,214,0.66);max-width:54ch;margin-bottom:12px;text-wrap:pretty;">"Beautiful work — straightforward, nice flow, and easy to use."</p>
+        <div style="font-size:0.82rem;letter-spacing:0.12em;text-transform:uppercase;color:#8fae98;margin-bottom:12px;">— P06-KKC · Evaluation participant, EFI</div>
+
+        <span style="font-family:'Fraunces',serif;font-style:italic;font-size:clamp(2.6rem,4vw,3.5rem);letter-spacing:0.005em;color:#e6a99b;display:block;margin:120px 0 28px;">More case studies</span>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(240px, 1fr));gap:28px;margin-bottom:48px;">
+          <a href="case-matchx.html" style="text-decoration:none;color:inherit;display:block;">
+            <div style="border-radius:8px;overflow:hidden;background:#1a2a22;margin-bottom:16px;"><img src="images/hero-1.png" alt="MatchX cover" style="display:block;width:100%;height:clamp(180px,20vw,260px);object-fit:cover;"></div>
+            <h4 style="font-size:1.05rem;font-weight:600;color:#e6a99b;margin-bottom:8px;">MatchX</h4>
+            <p style="font-size:0.92rem;line-height:1.6;color:rgba(236,227,214,0.6);text-wrap:pretty;">Unifying three fragmented histocompatibility tools into one platform, from research through FDA clearance.</p>
+          </a>
+          <a href="case-apheresis-device.html" style="text-decoration:none;color:inherit;display:block;">
+            <div style="position:relative;border-radius:8px;overflow:hidden;background:#1a2a22;margin-bottom:16px;"><img src="images/case-2.png" alt="Apheresis Device cover" style="display:block;width:100%;height:clamp(180px,20vw,260px);object-fit:cover;filter:blur(6px);"><div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(21,35,28,0.28);"><div style="width:36px;height:36px;border-radius:50%;background:rgba(21,35,28,0.75);backdrop-filter:blur(4px);display:flex;align-items:center;justify-content:center;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#ece3d6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"></rect><path d="M8 11V7a4 4 0 0 1 8 0v4"></path></svg></div></div></div>
+            <h4 style="font-size:1.05rem;font-weight:600;color:#e6a99b;margin-bottom:8px;">Apheresis Device</h4>
+            <p style="font-size:0.92rem;line-height:1.6;color:rgba(236,227,214,0.6);text-wrap:pretty;">Speed for experts, clarity for beginners — a next-generation GUI for operators of all levels.</p>
+          </a>
+        </div>
+
+        <div style="display:flex;gap:16px;flex-wrap:wrap;">
+          <a href="work.html" class="work-btn" style="background:#e6a99b;color:#1c2b22;padding:14px 28px;border-radius:16px;font-size:1rem;font-weight:500;text-decoration:none;">All work</a>
+        </div>
+        </div>
+      </section>
+
+    </main>
+</div>
+
+<!-- ───────────────────────── FOOTER ───────────────────────── -->
+<footer style="background:#faf7f1;border-top:1px solid rgba(28,43,34,0.07);padding:42px 7vw;">
+  <div style="max-width:1180px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:18px;">
+    <a href="index.html" style="font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:rgba(28,43,34,0.75);text-decoration:none;">Adi Favela</a>
+    <div style="font-size:0.85rem;letter-spacing:0.06em;text-transform:uppercase;color:rgba(28,43,34,0.3);">© 2026 Adi Favela</div>
+  </div>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  var container = document.getElementById('trainingHero');
+  if (container) {
+    var imgs = Array.prototype.slice.call(container.querySelectorAll('img'));
+    var i = 0;
+    setInterval(function () {
+      i = (i + 1) % imgs.length;
+      imgs.forEach(function (img, idx) { img.style.opacity = idx === i ? '1' : '0'; });
+    }, 3200);
+  }
+
+  var steps = Array.prototype.slice.call(document.querySelectorAll('.bar-step'));
+  if (steps.length) {
+    var prevActive = -1;
+    function animateFill(el, color) {
+      if (el._fillRaf) cancelAnimationFrame(el._fillRaf);
+      var duration = 550, start = performance.now(), runId = {};
+      el._fillRun = runId;
+      function step(t) {
+        if (el._fillRun !== runId) return;
+        var p = Math.min(1, (t - start) / duration), pct = p * 100;
+        el.style.background = 'conic-gradient(from -90deg, ' + color + ' ' + pct + '%, transparent ' + pct + '%)';
+        if (p < 1) el._fillRaf = requestAnimationFrame(step);
+        else { el.style.background = color; el._fillRaf = null; }
+      }
+      el._fillRaf = requestAnimationFrame(step);
+    }
+    function setSolid(el, color) {
+      if (el._fillRaf) { cancelAnimationFrame(el._fillRaf); el._fillRaf = null; }
+      el._fillRun = null;
+      el.style.background = color;
+    }
+    function sync() {
+      var mid = window.scrollY + window.innerHeight * 0.3, active = 0;
+      steps.forEach(function (st, i) {
+        var c = st.querySelector('.bar-circle');
+        var sec = c && document.getElementById(c.getAttribute('data-target'));
+        if (sec) { var top = sec.getBoundingClientRect().top + window.scrollY; if (top <= mid) active = i; }
+      });
+      steps.forEach(function (st, i) {
+        var on = i === active, done = i < active, reached = i <= active;
+        var c = st.querySelector('.bar-circle'), l = st.querySelector('.bar-label');
+        if (c) {
+          c.style.borderColor = on ? '#6ca417' : (reached ? '#c1694f' : 'rgba(28,43,34,0.25)');
+          c.style.transform = on ? 'scale(1.08)' : 'scale(1)';
+          c.style.boxShadow = on ? '0 0 14px rgba(108,164,23,0.5)' : 'none';
+          if (reached) {
+            if (on && i !== prevActive && prevActive !== -1) { animateFill(c, '#6ca417'); c.dataset.filledColor = 'green'; }
+            else if (!c.dataset.filled || c.dataset.filledColor !== (on ? 'green' : 'terracotta')) { setSolid(c, on ? '#6ca417' : '#c1694f'); c.dataset.filled = '1'; c.dataset.filledColor = on ? 'green' : 'terracotta'; }
+          } else { setSolid(c, 'transparent'); c.dataset.filled = ''; }
+        }
+        if (l) { l.style.color = on ? '#6ca417' : (done ? 'rgba(28,43,34,0.72)' : 'rgba(28,43,34,0.5)'); l.style.fontWeight = on ? '700' : '300'; }
+      });
+      prevActive = active;
+      Array.prototype.slice.call(document.querySelectorAll('.bar-conn')).forEach(function (cn, i) { cn.style.background = i < active ? '#c1694f' : 'rgba(28,43,34,0.14)'; });
+      var scroll = document.getElementById('csBarScroll'), act = steps[active];
+      if (scroll && act) {
+        var left = act.offsetLeft, right = left + act.offsetWidth;
+        if (left < scroll.scrollLeft + 24) scroll.scrollLeft = Math.max(0, left - 48);
+        else if (right > scroll.scrollLeft + scroll.clientWidth - 24) scroll.scrollLeft = right - scroll.clientWidth + 48;
+      }
+    }
+    window.addEventListener('scroll', sync, { passive: true });
+    window.addEventListener('resize', sync);
+    requestAnimationFrame(sync);
+    setTimeout(sync, 300);
+  }
+});
+</script>
+</body>
+</html>
