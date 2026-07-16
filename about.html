@@ -73,6 +73,9 @@
   .page-blurb{font-size:1.1rem;line-height:1.72;color:rgba(236,227,214,0.72);max-width:46ch;margin:0 auto;text-wrap:pretty;}
   .cta-secondary{transition:background .2s,transform .2s;}
   .cta-secondary:hover{background:#d4857a;transform:translateY(-2px);}
+  @media (max-width: 700px) {
+    [style*="grid-template-columns"] { grid-template-columns: 1fr !important; }
+  }
 </style>
 <script src="design-flow-sparkles.js"></script>
 </head>

@@ -46,6 +46,9 @@
   .nav-active::after{transform:scaleX(1) !important;}
   .cta-primary{transition:background .2s,transform .2s;}
   .cta-primary:hover{background:#d4857a;transform:translateY(-2px);}
+  @media (max-width: 700px) {
+    [style*="grid-template-columns"] { grid-template-columns: 1fr !important; }
+  }
 </style>
 </head>
 <body>

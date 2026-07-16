@@ -35,6 +35,9 @@
   .nav-active::after{transform:scaleX(1) !important;}
   .work-btn{transition:background .2s,transform .2s;}
   .work-btn:hover{background:#d99384;transform:translateY(-2px);}
+  @media (max-width: 700px) {
+    [style*="grid-template-columns"] { grid-template-columns: 1fr !important; }
+  }
 </style>
 </head>
 <body>
