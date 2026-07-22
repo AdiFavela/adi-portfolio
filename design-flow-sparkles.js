@@ -120,7 +120,7 @@ class DesignFlowSparkles extends HTMLElement {
         if(el.kind==='text'){
           ctx.save();
           ctx.globalAlpha=local;
-          ctx.font=`${el.w} ${el.size}px 'Poppins',sans-serif`;
+          ctx.font=`${el.w} ${el.size}px Arial, Helvetica, sans-serif`;
           ctx.fillStyle=rgba(el.col,1);
           ctx.textAlign='center';
           ctx.textBaseline='middle';
@@ -160,13 +160,6 @@ class DesignFlowSparkles extends HTMLElement {
       raf = requestAnimationFrame(frame);
     };
 
-    if (!document.getElementById('__design-flow-sparkles-font')) {
-      const lnk=document.createElement('link');
-      lnk.id='__design-flow-sparkles-font';
-      lnk.rel='stylesheet';
-      lnk.href='https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap';
-      document.head.appendChild(lnk);
-    }
     document.fonts.ready.then(()=>{ raf = requestAnimationFrame(frame); });
     this._raf = () => raf && cancelAnimationFrame(raf);
   }
