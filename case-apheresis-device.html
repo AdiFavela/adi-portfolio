@@ -65,6 +65,9 @@
   }
   nav { position: fixed; top: 0; left: 0; right: 0; z-index: 150; transition: transform .3s ease; }
   nav.nav-hidden { transform: translateY(-100%); }
+  @keyframes wireframeScroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  .wireframe-track { display: flex; gap: 20px; width: max-content; animation: wireframeScroll 32s linear infinite; }
+  .wireframe-track:hover { animation-play-state: paused; }
 </style>
 </head>
 <body>
@@ -317,6 +320,30 @@
         </div>
         <div style="margin-top:40px;">
           <div style="font-size:0.72rem;letter-spacing:0.16em;text-transform:uppercase;color:#5f7d68;margin-bottom:16px;">The deliverable · High Fidelity Wireframes</div>
+          <div style="position:relative;overflow:hidden;margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw);width:100vw;padding:0 7vw;box-sizing:border-box;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);">
+            <div class="wireframe-track">
+              <img src="uploads/1-home.jpg" alt="Apheresis Device wireframe — home screen" style="display:block;height:clamp(220px,26vw,340px);width:auto;border-radius:8px;flex:0 0 auto;">
+              <img src="uploads/2-kit-install-3.jpg" alt="Apheresis Device wireframe — kit install guidance" style="display:block;height:clamp(220px,26vw,340px);width:auto;border-radius:8px;flex:0 0 auto;">
+              <img src="uploads/4-decisions-5.jpg" alt="Apheresis Device wireframe — procedure decisions" style="display:block;height:clamp(220px,26vw,340px);width:auto;border-radius:8px;flex:0 0 auto;">
+              <img src="uploads/5-tools-6.jpg" alt="Apheresis Device wireframe — product priority tools" style="display:block;height:clamp(220px,26vw,340px);width:auto;border-radius:8px;flex:0 0 auto;">
+              <img src="uploads/6-run-3.jpg" alt="Apheresis Device wireframe — run screen, draw phase" style="display:block;height:clamp(220px,26vw,340px);width:auto;border-radius:8px;flex:0 0 auto;">
+              <img src="uploads/6-run-4.jpg" alt="Apheresis Device wireframe — run screen, return phase" style="display:block;height:clamp(220px,26vw,340px);width:auto;border-radius:8px;flex:0 0 auto;">
+              <img src="uploads/6-run-12.jpg" alt="Apheresis Device wireframe — run screen details" style="display:block;height:clamp(220px,26vw,340px);width:auto;border-radius:8px;flex:0 0 auto;">
+              <img src="uploads/8-end-9.jpg" alt="Apheresis Device wireframe — end of procedure summary" style="display:block;height:clamp(220px,26vw,340px);width:auto;border-radius:8px;flex:0 0 auto;">
+              <img src="uploads/9-alerts-8.jpg" alt="Apheresis Device wireframe — alert state" style="display:block;height:clamp(220px,26vw,340px);width:auto;border-radius:8px;flex:0 0 auto;">
+              <img src="uploads/9-alerts-14.jpg" alt="Apheresis Device wireframe — alert detail" style="display:block;height:clamp(220px,26vw,340px);width:auto;border-radius:8px;flex:0 0 auto;">
+              <img src="uploads/1-home.jpg" alt="" aria-hidden="true" style="display:block;height:clamp(220px,26vw,340px);width:auto;border-radius:8px;flex:0 0 auto;">
+              <img src="uploads/2-kit-install-3.jpg" alt="" aria-hidden="true" style="display:block;height:clamp(220px,26vw,340px);width:auto;border-radius:8px;flex:0 0 auto;">
+              <img src="uploads/4-decisions-5.jpg" alt="" aria-hidden="true" style="display:block;height:clamp(220px,26vw,340px);width:auto;border-radius:8px;flex:0 0 auto;">
+              <img src="uploads/5-tools-6.jpg" alt="" aria-hidden="true" style="display:block;height:clamp(220px,26vw,340px);width:auto;border-radius:8px;flex:0 0 auto;">
+              <img src="uploads/6-run-3.jpg" alt="" aria-hidden="true" style="display:block;height:clamp(220px,26vw,340px);width:auto;border-radius:8px;flex:0 0 auto;">
+              <img src="uploads/6-run-4.jpg" alt="" aria-hidden="true" style="display:block;height:clamp(220px,26vw,340px);width:auto;border-radius:8px;flex:0 0 auto;">
+              <img src="uploads/6-run-12.jpg" alt="" aria-hidden="true" style="display:block;height:clamp(220px,26vw,340px);width:auto;border-radius:8px;flex:0 0 auto;">
+              <img src="uploads/8-end-9.jpg" alt="" aria-hidden="true" style="display:block;height:clamp(220px,26vw,340px);width:auto;border-radius:8px;flex:0 0 auto;">
+              <img src="uploads/9-alerts-8.jpg" alt="" aria-hidden="true" style="display:block;height:clamp(220px,26vw,340px);width:auto;border-radius:8px;flex:0 0 auto;">
+              <img src="uploads/9-alerts-14.jpg" alt="" aria-hidden="true" style="display:block;height:clamp(220px,26vw,340px);width:auto;border-radius:8px;flex:0 0 auto;">
+            </div>
+          </div>
         </div>
       </section>
 
