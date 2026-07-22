@@ -4,16 +4,16 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Apheresis Device - Adi Favela</title>
-<meta name="description" content="Speed for experts, clarity for beginners - a next-generation GUI for operators of all levels.">
+<meta name="description" content="Speed for experts, clarity for beginners; a next-generation GUI for operators of all levels.">
 <meta property="og:title" content="Apheresis Device - Adi Favela">
-<meta property="og:description" content="Speed for experts, clarity for beginners - a next-generation GUI for operators of all levels.">
-<meta property="og:image" content="https://adi-portfolio-lovat.vercel.app/images/case-2.png">
+<meta property="og:description" content="Speed for experts, clarity for beginners; a next-generation GUI for operators of all levels.">
+<meta property="og:image" content="https://adi-portfolio-lovat.vercel.app/uploads/1-home.jpg">
 <meta property="og:url" content="https://adi-portfolio-lovat.vercel.app/case-apheresis-device.html">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Apheresis Device - Adi Favela">
-<meta name="twitter:description" content="Speed for experts, clarity for beginners - a next-generation GUI for operators of all levels.">
-<meta name="twitter:image" content="https://adi-portfolio-lovat.vercel.app/images/case-2.png">
+<meta name="twitter:description" content="Speed for experts, clarity for beginners; a next-generation GUI for operators of all levels.">
+<meta name="twitter:image" content="https://adi-portfolio-lovat.vercel.app/uploads/1-home.jpg">
 <script>
   if (localStorage.getItem('cs-unlock-apheresis') === '1') {
     document.documentElement.className += ' apheresis-unlocked';
@@ -61,12 +61,14 @@
     #navLinks .nav-link { padding: 10px 0; width: 100%; text-align: right; }
     [style*="gap:clamp(24px,4vw,48px)"] { gap: 12px !important; }
     [style*="gap:clamp(28px,4vw,56px)"] { gap: 12px !important; }
+    .feature-row { flex-direction: column-reverse !important; }
+    .feature-row > div { flex: 0 0 auto !important; width: 100% !important; }
   }
 </style>
 </head>
 <body>
 
-<!-- ───────────────────────── PASSWORD GATE ───────────────────────── -->
+<!-- PASSWORD GATE -->
 <div id="apheresisLocked">
   <div style="min-height:100vh;display:flex;align-items:center;justify-content:center;background:#15231c;padding:24px;">
     <div style="max-width:380px;width:100%;text-align:center;">
@@ -74,14 +76,14 @@
       <p style="font-size:0.92rem;color:rgba(236,227,214,0.55);margin-bottom:24px;">Enter the password to continue.</p>
       <form id="pwForm" style="display:flex;flex-direction:column;gap:12px;">
         <input type="password" id="pwInput" placeholder="Password" style="width:100%;padding:12px 16px;border-radius:10px;border:1px solid rgba(236,227,214,0.2);background:#1a2a22;color:#ece3d6;font-size:1rem;box-sizing:border-box;">
-        <div id="pwError" style="display:none;color:#e6a99b;font-size:0.85rem;">Incorrect password - try again.</div>
+        <div id="pwError" style="display:none;color:#e6a99b;font-size:0.85rem;">Incorrect password, try again.</div>
         <button type="submit" style="background:#e6a99b;color:#1c2b22;padding:12px 20px;border-radius:10px;border:none;font-size:1rem;font-weight:500;cursor:pointer;">Unlock</button>
       </form>
     </div>
   </div>
 </div>
 
-<!-- ───────────────────────── UNLOCKED CONTENT ───────────────────────── -->
+<!-- UNLOCKED CONTENT -->
 <div id="apheresisUnlocked">
 <nav style="display:flex;align-items:center;justify-content:space-between;padding:16px 7vw;min-height:1.85rem;background:#15231c;border-bottom:1px solid rgba(236,227,214,0.08);">
   <a href="index.html" style="display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:rgba(236,227,214,0.8);font-size:0.95rem;letter-spacing:0.02em;"><span class="cs-back-arrow">←</span> Home</a>
@@ -93,7 +95,7 @@
   </div>
 </nav>
 
-<!-- ───────────────────────── HERO ───────────────────────── -->
+<!-- HERO -->
 <section style="position:relative;background:#15231c;padding:76px 0 60px;overflow:hidden;">
   <div style="max-width:1120px;margin:0 auto;padding:0 7vw;">
     <div style="display:flex;gap:clamp(24px,4vw,64px);align-items:flex-start;">
@@ -112,13 +114,24 @@
   <div style="max-width:1120px;margin:40px auto 0;padding:0 7vw;">
     <div style="display:flex;gap:clamp(24px,4vw,64px);align-items:flex-start;">
       <div style="flex:1 1 auto;min-width:0;">
-    <img src="images/case-2.png" alt="Apheresis Device hero" style="display:block;width:100%;height:clamp(300px,42vw,560px);object-fit:cover;border-radius:22px;">
+    <div id="apheresisHero" style="position:relative;width:100%;aspect-ratio:1024/768;max-height:70vh;border-radius:8px;overflow:hidden;">
+      <img src="uploads/1-home.jpg" alt="Home" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;transition:opacity 1.2s ease;opacity:1;">
+      <img src="uploads/2-kit-install-3.jpg" alt="Kit install" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;transition:opacity 1.2s ease;opacity:0;">
+      <img src="uploads/4-decisions-5.jpg" alt="Decisions" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;transition:opacity 1.2s ease;opacity:0;">
+      <img src="uploads/5-tools-6.jpg" alt="Tools" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;transition:opacity 1.2s ease;opacity:0;">
+      <img src="uploads/6-run-3.jpg" alt="Run" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;transition:opacity 1.2s ease;opacity:0;">
+      <img src="uploads/6-run-4.jpg" alt="Run" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;transition:opacity 1.2s ease;opacity:0;">
+      <img src="uploads/6-run-12.jpg" alt="Run" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;transition:opacity 1.2s ease;opacity:0;">
+      <img src="uploads/8-end-9.jpg" alt="End" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;transition:opacity 1.2s ease;opacity:0;">
+      <img src="uploads/9-alerts-8.jpg" alt="Alerts" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;transition:opacity 1.2s ease;opacity:0;">
+      <img src="uploads/9-alerts-14.jpg" alt="Alerts" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;transition:opacity 1.2s ease;opacity:0;">
+    </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ───────────────────────── HORIZONTAL PROGRESS BAR ───────────────────────── -->
+<!-- HORIZONTAL PROGRESS BAR -->
 <div id="csBar" style="position:sticky;top:0;z-index:60;background:rgba(244,239,227,0.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid rgba(28,43,34,0.08);">
   <div style="max-width:1120px;margin:0 auto;padding:60px 7vw;">
     <div style="position:relative;">
@@ -141,7 +154,7 @@
   </div>
 </div>
 
-<!-- ───────────────────────── BODY ───────────────────────── -->
+<!-- BODY -->
 <div style="background:#f4efe3;">
     <main id="csMain" style="max-width:1120px;margin:0 auto;padding:64px 7vw 100px;">
 
@@ -149,10 +162,10 @@
       <section id="overview" style="scroll-margin-top:84px;">
         <span style="font-size:clamp(2.4rem,3.6vw,3.2rem);letter-spacing:0.01em;text-transform:uppercase;color:#c1694f;display:block;margin-bottom:12px;line-height:1.02;">Overview</span>
         <h2 style="font-family:Arial, Helvetica, sans-serif;font-weight:300;font-size:clamp(1.9rem,3.2vw,2.7rem);line-height:1.1;color:#1c2b22;margin-bottom:24px;text-wrap:balance;">Designing an interface for every skill level.</h2>
-        <div style="max-width:70ch;">
+        <div style="max-width:78ch;">
           <p style="font-size:1.05rem;line-height:1.78;color:rgba(28,43,34,0.84);margin-bottom:16px;text-wrap:pretty;">A client set out to build a next-generation, all-in-one apheresis device, combining the capabilities of several separate machines into a single system. Our team needed a GUI that worked for brand-new operators and 20-year veterans alike.</p>
           <p style="font-size:1.05rem;line-height:1.78;color:rgba(28,43,34,0.84);margin-bottom:16px;text-wrap:pretty;">The interface needed to guide first-time users through unfamiliar medical procedures, while staying out of the way of experienced operators who just wanted speed and flexibility.</p>
-          <p style="font-size:1.05rem;line-height:1.78;color:rgba(28,43,34,0.84);text-wrap:pretty;">Because the device supports complex, multi-step blood collection procedures across variable environments - fixed sites, mobile blood drive buses, temporary setups - the experience had to simplify technical decisions without sacrificing accuracy or safety. The result was a flexible, research-validated interface that adapted to operator expertise and real-time procedure status.</p>
+          <p style="font-size:1.05rem;line-height:1.78;color:rgba(28,43,34,0.84);text-wrap:pretty;">Because the device supports complex, multi-step blood collection procedures across variable environments, fixed sites, mobile blood drive buses, temporary setups, the experience had to simplify technical decisions without sacrificing accuracy or safety. The result was a flexible, research-validated interface that adapted to operator expertise and real-time procedure status.</p>
         </div>
       </section>
 
@@ -162,8 +175,8 @@
         <h2 style="font-family:Arial, Helvetica, sans-serif;font-weight:300;font-size:clamp(1.9rem,3.2vw,2.7rem);line-height:1.1;color:#1c2b22;margin-bottom:24px;text-wrap:balance;">This wasn't just a screen redesign.</h2>
         <p style="font-size:1.05rem;line-height:1.78;color:rgba(28,43,34,0.84);margin-bottom:26px;max-width:62ch;text-wrap:pretty;">The device replaced the separate functions of several existing machines with one unified system, introducing entirely new workflows for people who'd spent years on older, single-purpose devices.</p>
         <div style="display:flex;flex-direction:column;gap:14px;">
-          <div style="display:flex;gap:14px;align-items:flex-start;"><span style="color:#c1694f;font-size:1.1rem;line-height:1.5;">-</span><span style="font-size:1rem;line-height:1.6;color:rgba(28,43,34,0.88);">Many operators were transitioning from fragmented, manual processes to a single, guided digital workflow.</span></div>
-          <div style="display:flex;gap:14px;align-items:flex-start;"><span style="color:#c1694f;font-size:1.1rem;line-height:1.5;">-</span><span style="font-size:1rem;line-height:1.6;color:rgba(28,43,34,0.88);">Donors and time-pressured environments - in one case, a 45-minute total window at a high school blood drive - added constraints most software teams never have to design around.</span></div>
+          <div style="display:flex;gap:14px;align-items:flex-start;"><span style="color:#c1694f;font-size:1.1rem;line-height:1.5;">•</span><span style="font-size:1rem;line-height:1.6;color:rgba(28,43,34,0.88);">Many operators were transitioning from fragmented, manual processes to a single, guided digital workflow.</span></div>
+          <div style="display:flex;gap:14px;align-items:flex-start;"><span style="color:#c1694f;font-size:1.1rem;line-height:1.5;">•</span><span style="font-size:1rem;line-height:1.6;color:rgba(28,43,34,0.88);">Donors and time-pressured environments, in one case, a 45-minute total window at a high school blood drive, added constraints most software teams never have to design around.</span></div>
         </div>
       </section>
 
@@ -193,7 +206,8 @@
             </div>
           </div>
         </div>
-        <p style="font-size:1.05rem;line-height:1.78;color:rgba(28,43,34,0.84);max-width:62ch;text-wrap:pretty;">The process moved through four phases - outlined below. Each step is linked in the bar above so you can jump straight to it.</p>
+        <p style="font-size:1.05rem;line-height:1.78;color:rgba(28,43,34,0.84);max-width:62ch;text-wrap:pretty;">The process moved through four phases, outlined below. Each step is linked in the bar above so you can jump straight to it.</p>
+        <img src="uploads/deep-dives.gif" alt="Deep dive process artifacts" style="display:block;width:100%;height:clamp(240px,26vw,340px);object-fit:contain;border-radius:8px;margin-top:30px;">
       </section>
 
       <!-- KICKOFF & TASKFLOWS -->
@@ -201,29 +215,43 @@
         <span style="font-family:Arial, Helvetica, sans-serif;font-style:italic;font-size:clamp(2.15rem,3.4vw,2.95rem);letter-spacing:0.005em;color:#5f7d68;display:flex;align-items:center;gap:14px;margin-bottom:12px;line-height:1.05;"><span style="width:22px;height:1px;background:#5f7d68;flex:0 0 auto;"></span>Kickoff &amp; Immersion</span>
         <h2 style="font-family:Arial, Helvetica, sans-serif;font-weight:300;font-size:clamp(1.9rem,3.2vw,2.7rem);line-height:1.1;color:#1c2b22;margin-bottom:24px;text-wrap:balance;">Aligning on scope, then mapping the workflow.</h2>
         <p style="font-size:1.05rem;line-height:1.78;color:rgba(28,43,34,0.84);margin-bottom:24px;max-width:62ch;text-wrap:pretty;">The kickoff aligned the design team with the client's stakeholders on a shared goal: design a new graphical interface for one collection protocol that could later scale into a full design system for the platform.</p>
-        <p style="font-size:1.05rem;line-height:1.78;color:rgba(28,43,34,0.84);max-width:62ch;text-wrap:pretty;">Working from stakeholder deep-dives across marketing, data systems, and account management, plus hands-on demos of current-generation devices, the team compiled a single task analysis and workflow map accounting for hardware, user actions, and external systems together, rather than designing the screen in isolation.</p>
+        <p style="font-size:1.05rem;line-height:1.78;color:rgba(28,43,34,0.84);margin-bottom:30px;max-width:62ch;text-wrap:pretty;">Working from stakeholder deep-dives across marketing, data systems, and account management, plus hands-on demos of current-generation devices, the team compiled a single task analysis and workflow map accounting for hardware, user actions, and external systems together, rather than designing the screen in isolation.</p>
+        <img src="uploads/screen-recording-2026-07-15-ed3a04f4.gif" alt="Kickoff and taskflow mapping" style="display:block;width:100%;height:clamp(260px,30vw,420px);object-fit:contain;border-radius:8px;">
+        <div style="font-size:0.85rem;color:rgba(28,43,34,0.55);margin-top:10px;text-align:center;">High level workflow maps</div>
       </section>
 
       <!-- PROCESS STEP 01 -->
       <section id="step-1" style="scroll-margin-top:84px;margin-top:64px;padding-top:56px;border-top:1px solid rgba(28,43,34,0.08);">
-        <div style="max-width:70ch;">
-          <span style="font-size:clamp(2.4rem,3.6vw,3.2rem);letter-spacing:0.01em;text-transform:uppercase;color:#c1694f;display:block;margin-bottom:12px;line-height:1.02;">Discover</span>
-          <h3 style="font-family:Arial, Helvetica, sans-serif;font-weight:400;font-size:clamp(1.6rem,2.6vw,2.1rem);line-height:1.12;color:#1c2b22;margin-bottom:16px;">Understanding how operators work today.</h3>
-          <p style="font-size:1.02rem;line-height:1.74;color:rgba(28,43,34,0.82);margin-bottom:14px;text-wrap:pretty;">Discovery centered on how operators actually use apheresis devices in the field today - the workarounds they rely on, the gaps in current interfaces, and what they expected from a next-generation system. These conversations, paired with a heuristic analysis of the existing interface, surfaced pain points across three groups:</p>
-          <div style="display:flex;flex-direction:column;gap:10px;">
-            <div style="display:flex;gap:12px;align-items:flex-start;"><span style="color:#c1694f;font-size:1rem;line-height:1.5;">-</span><span style="font-size:0.98rem;line-height:1.6;color:rgba(28,43,34,0.82);"><strong style="color:#1c2b22;font-weight:600;">Operators</strong> juggling kits and tasks: manual, repetitive data entry; physical kit/tubing management; alarm fatigue; clunky end-of-procedure documentation.</span></div>
-            <div style="display:flex;gap:12px;align-items:flex-start;"><span style="color:#c1694f;font-size:1rem;line-height:1.5;">-</span><span style="font-size:0.98rem;line-height:1.6;color:rgba(28,43,34,0.82);"><strong style="color:#1c2b22;font-weight:600;">New operators</strong>, often without prior medical training - sometimes confusion selecting the right product/procedure, alarm confusion.</span></div>
-            <div style="display:flex;gap:12px;align-items:flex-start;"><span style="color:#c1694f;font-size:1rem;line-height:1.5;">-</span><span style="font-size:0.98rem;line-height:1.6;color:rgba(28,43,34,0.82);"><strong style="color:#1c2b22;font-weight:600;">Donors</strong>, indirectly affected - procedure reactions, vein/flow issues, and tight collection windows that limit how much time operators have to work with.</span></div>
+        <div class="feature-row" style="display:flex;flex-wrap:wrap;gap:clamp(24px,4vw,48px);align-items:center;">
+          <div style="flex:1 1 300px;min-width:260px;">
+            <span style="font-size:clamp(2.4rem,3.6vw,3.2rem);letter-spacing:0.01em;text-transform:uppercase;color:#c1694f;display:block;margin-bottom:12px;line-height:1.02;">Discover</span>
+            <h3 style="font-family:Arial, Helvetica, sans-serif;font-weight:400;font-size:clamp(1.6rem,2.6vw,2.1rem);line-height:1.12;color:#1c2b22;margin-bottom:16px;">Understanding how operators work today.</h3>
+            <p style="font-size:1.02rem;line-height:1.74;color:rgba(28,43,34,0.82);margin-bottom:14px;text-wrap:pretty;">Discovery centered on how operators actually use apheresis devices in the field today, the workarounds they rely on, the gaps in current interfaces, and what they expected from a next-generation system. These conversations, paired with a heuristic analysis of the existing interface, surfaced pain points across three groups:</p>
+            <div style="display:flex;flex-direction:column;gap:10px;">
+              <div style="display:flex;gap:12px;align-items:flex-start;"><span style="color:#c1694f;font-size:1rem;line-height:1.5;">•</span><span style="font-size:0.98rem;line-height:1.6;color:rgba(28,43,34,0.82);"><strong style="color:#1c2b22;font-weight:600;">Operators</strong> juggling kits and tasks: manual, repetitive data entry; physical kit/tubing management; alarm fatigue; clunky end-of-procedure documentation.</span></div>
+              <div style="display:flex;gap:12px;align-items:flex-start;"><span style="color:#c1694f;font-size:1rem;line-height:1.5;">•</span><span style="font-size:0.98rem;line-height:1.6;color:rgba(28,43,34,0.82);"><strong style="color:#1c2b22;font-weight:600;">New operators</strong>, often without prior medical training, sometimes confusion selecting the right product/procedure, alarm confusion.</span></div>
+              <div style="display:flex;gap:12px;align-items:flex-start;"><span style="color:#c1694f;font-size:1rem;line-height:1.5;">•</span><span style="font-size:0.98rem;line-height:1.6;color:rgba(28,43,34,0.82);"><strong style="color:#1c2b22;font-weight:600;">Donors</strong>, indirectly affected, procedure reactions, vein/flow issues, and tight collection windows that limit how much time operators have to work with.</span></div>
+            </div>
+          </div>
+          <div style="flex:1 1 300px;min-width:260px;">
+            <img src="uploads/screen-recording-2026-07-22.gif" alt="Heuristic analysis" style="display:block;width:100%;height:clamp(220px,24vw,320px);object-fit:contain;border-radius:8px;">
+            <div style="font-size:0.85rem;color:rgba(28,43,34,0.55);margin-top:10px;text-align:center;">Heuristic analysis</div>
           </div>
         </div>
       </section>
 
       <!-- PROCESS STEP 02 -->
       <section id="step-2" style="scroll-margin-top:84px;margin-top:64px;padding-top:56px;border-top:1px solid rgba(28,43,34,0.08);">
-        <div style="max-width:70ch;">
-          <span style="font-size:clamp(2.4rem,3.6vw,3.2rem);letter-spacing:0.01em;text-transform:uppercase;color:#c1694f;display:block;margin-bottom:12px;line-height:1.02;">Define</span>
-          <h3 style="font-family:Arial, Helvetica, sans-serif;font-weight:400;font-size:clamp(1.6rem,2.6vw,2.1rem);line-height:1.12;color:#1c2b22;margin-bottom:16px;">Showing operators what's possible - without overwhelming them.</h3>
-          <p style="font-size:1.02rem;line-height:1.74;color:rgba(28,43,34,0.82);text-wrap:pretty;">Defining the experience meant testing two fundamentally different navigation philosophies with real clinical educators and operators: a guided, linear concept, and a flexible, lateral one. Every operator regardless of experience level has their own way of installing a kit, checking donor history, and responding to alerts, so the interface had to support many valid paths rather than enforce one. Participants clearly preferred the lateral model, which became the blueprint for every screen that followed.</p>
+        <div class="feature-row" style="display:flex;flex-wrap:wrap;gap:clamp(24px,4vw,48px);align-items:center;flex-direction:row-reverse;">
+          <div style="flex:1 1 300px;min-width:260px;">
+            <span style="font-size:clamp(2.4rem,3.6vw,3.2rem);letter-spacing:0.01em;text-transform:uppercase;color:#c1694f;display:block;margin-bottom:12px;line-height:1.02;">Define</span>
+            <h3 style="font-family:Arial, Helvetica, sans-serif;font-weight:400;font-size:clamp(1.6rem,2.6vw,2.1rem);line-height:1.12;color:#1c2b22;margin-bottom:16px;">Showing operators what's possible, without overwhelming them.</h3>
+            <p style="font-size:1.02rem;line-height:1.74;color:rgba(28,43,34,0.82);text-wrap:pretty;">Defining the experience meant testing two fundamentally different navigation philosophies with real clinical educators and operators: a guided, linear concept, and a flexible, lateral one. Every operator regardless of experience level has their own way of installing a kit, checking donor history, and responding to alerts, so the interface had to support many valid paths rather than enforce one. Participants clearly preferred the lateral model, which became the blueprint for every screen that followed.</p>
+          </div>
+          <div style="flex:1 1 300px;min-width:260px;">
+            <img src="uploads/ia-analysis.gif" alt="IA Study Analysis" style="display:block;width:100%;height:clamp(220px,24vw,320px);object-fit:contain;border-radius:8px;">
+            <div style="font-size:0.85rem;color:rgba(28,43,34,0.55);margin-top:10px;text-align:center;">IA Study Analysis</div>
+          </div>
         </div>
       </section>
 
@@ -231,12 +259,50 @@
       <section id="features" style="scroll-margin-top:84px;margin-top:64px;padding-top:56px;border-top:1px solid rgba(28,43,34,0.08);">
         <span style="font-size:clamp(2.4rem,3.6vw,3.2rem);letter-spacing:0.01em;text-transform:uppercase;color:#c1694f;display:block;margin-bottom:12px;line-height:1.02;">Key Features</span>
         <h2 style="font-family:Arial, Helvetica, sans-serif;font-weight:300;font-size:clamp(1.9rem,3.2vw,2.7rem);line-height:1.1;color:#1c2b22;margin-bottom:30px;text-wrap:balance;">The features that guide every operator through it.</h2>
-        <div style="display:flex;flex-direction:column;gap:40px;max-width:70ch;">
-          <div style="display:flex;gap:16px;align-items:stretch;"><svg width="10" height="64" viewBox="0 0 10 64" style="display:block;flex:0 0 auto;" aria-hidden="true"><path d="M5 0 Q0 8 5 16 T5 32 T5 48 T5 64" fill="none" stroke="#e6a99b" stroke-width="3" stroke-linecap="round"></path></svg><div><h3 style="font-family:Arial, Helvetica, sans-serif;font-weight:500;font-size:clamp(1.6rem,2.4vw,2rem);color:#1c2b22;margin-bottom:12px;">Adaptive Guidance</h3><p style="font-size:1.02rem;line-height:1.74;color:rgba(28,43,34,0.88);text-wrap:pretty;">Minimal instructions for experts, detailed step-by-step support for beginners.</p></div></div>
-          <div style="display:flex;gap:16px;align-items:stretch;"><svg width="10" height="64" viewBox="0 0 10 64" style="display:block;flex:0 0 auto;" aria-hidden="true"><path d="M5 0 Q0 8 5 16 T5 32 T5 48 T5 64" fill="none" stroke="#e6a99b" stroke-width="3" stroke-linecap="round"></path></svg><div><h3 style="font-family:Arial, Helvetica, sans-serif;font-weight:500;font-size:clamp(1.6rem,2.4vw,2rem);color:#1c2b22;margin-bottom:12px;">Global Status</h3><p style="font-size:1.02rem;line-height:1.74;color:rgba(28,43,34,0.88);text-wrap:pretty;">A color-coded, consistently placed status indicator that builds a shared mental model across every screen.</p></div></div>
-          <div style="display:flex;gap:16px;align-items:stretch;"><svg width="10" height="64" viewBox="0 0 10 64" style="display:block;flex:0 0 auto;" aria-hidden="true"><path d="M5 0 Q0 8 5 16 T5 32 T5 48 T5 64" fill="none" stroke="#e6a99b" stroke-width="3" stroke-linecap="round"></path></svg><div><h3 style="font-family:Arial, Helvetica, sans-serif;font-weight:500;font-size:clamp(1.6rem,2.4vw,2rem);color:#1c2b22;margin-bottom:12px;">Lateral Navigation</h3><p style="font-size:1.02rem;line-height:1.74;color:rgba(28,43,34,0.88);text-wrap:pretty;">Freeform navigation so operators can multitask across kit setup, procedure input, and live monitoring.</p></div></div>
-          <div style="display:flex;gap:16px;align-items:stretch;"><svg width="10" height="64" viewBox="0 0 10 64" style="display:block;flex:0 0 auto;" aria-hidden="true"><path d="M5 0 Q0 8 5 16 T5 32 T5 48 T5 64" fill="none" stroke="#e6a99b" stroke-width="3" stroke-linecap="round"></path></svg><div><h3 style="font-family:Arial, Helvetica, sans-serif;font-weight:500;font-size:clamp(1.6rem,2.4vw,2rem);color:#1c2b22;margin-bottom:12px;">Clear Alerts</h3><p style="font-size:1.02rem;line-height:1.74;color:rgba(28,43,34,0.88);text-wrap:pretty;">Concise troubleshooting steps paired with robust, intuitive alert states.</p></div></div>
-          <div style="display:flex;gap:16px;align-items:stretch;"><svg width="10" height="64" viewBox="0 0 10 64" style="display:block;flex:0 0 auto;" aria-hidden="true"><path d="M5 0 Q0 8 5 16 T5 32 T5 48 T5 64" fill="none" stroke="#e6a99b" stroke-width="3" stroke-linecap="round"></path></svg><div><h3 style="font-family:Arial, Helvetica, sans-serif;font-weight:500;font-size:clamp(1.6rem,2.4vw,2rem);color:#1c2b22;margin-bottom:12px;">Run Screen Dashboard</h3><p style="font-size:1.02rem;line-height:1.74;color:rgba(28,43,34,0.88);text-wrap:pretty;">A monitoring view optimized for legibility from across the room.</p></div></div>
+        <div style="display:flex;flex-direction:column;gap:64px;">
+
+          <div class="feature-row" style="display:flex;flex-wrap:wrap;gap:clamp(24px,4vw,48px);align-items:center;">
+            <div style="flex:1 1 360px;min-width:230px;width:100%;border-radius:8px;box-sizing:border-box;aspect-ratio:700/394;overflow:hidden;"><img src="uploads/adaptive-guidance.gif" alt="Adaptive Guidance" style="display:block;width:100%;height:100%;object-fit:contain;"></div>
+            <div style="flex:1 1 220px;min-width:200px;">
+              <div style="display:flex;gap:16px;align-items:stretch;"><svg width="10" height="64" viewBox="0 0 10 64" style="display:block;flex:0 0 auto;" aria-hidden="true"><path d="M5 0 Q0 8 5 16 T5 32 T5 48 T5 64" fill="none" stroke="#e6a99b" stroke-width="3" stroke-linecap="round"></path></svg><div><h3 style="font-family:Arial, Helvetica, sans-serif;font-weight:500;font-size:clamp(1.6rem,2.4vw,2rem);color:#1c2b22;margin-bottom:12px;">Adaptive Guidance</h3><p style="font-size:1.02rem;line-height:1.74;color:rgba(28,43,34,0.88);text-wrap:pretty;">Minimal instructions for experts, detailed step-by-step support for beginners.</p></div></div>
+            </div>
+          </div>
+
+          <div class="feature-row" style="display:flex;flex-wrap:wrap;gap:clamp(24px,4vw,48px);align-items:center;flex-direction:row-reverse;">
+            <div style="flex:1 1 360px;min-width:230px;width:100%;border-radius:8px;box-sizing:border-box;aspect-ratio:700/394;overflow:hidden;"><img src="uploads/global-status.gif" alt="Global Status" style="display:block;width:100%;height:100%;object-fit:contain;"></div>
+            <div style="flex:1 1 220px;min-width:200px;">
+              <div style="display:flex;gap:16px;align-items:stretch;"><svg width="10" height="64" viewBox="0 0 10 64" style="display:block;flex:0 0 auto;" aria-hidden="true"><path d="M5 0 Q0 8 5 16 T5 32 T5 48 T5 64" fill="none" stroke="#e6a99b" stroke-width="3" stroke-linecap="round"></path></svg><div><h3 style="font-family:Arial, Helvetica, sans-serif;font-weight:500;font-size:clamp(1.6rem,2.4vw,2rem);color:#1c2b22;margin-bottom:12px;">Global Status</h3><p style="font-size:1.02rem;line-height:1.74;color:rgba(28,43,34,0.88);text-wrap:pretty;">A color-coded, consistently placed status indicator that builds a shared mental model across every screen.</p></div></div>
+            </div>
+          </div>
+
+          <div class="feature-row" style="display:flex;flex-wrap:wrap;gap:clamp(24px,4vw,48px);align-items:center;">
+            <div style="flex:1 1 360px;min-width:230px;width:100%;border-radius:8px;box-sizing:border-box;aspect-ratio:700/394;overflow:hidden;"><img src="uploads/lateral-nav.gif" alt="Lateral Navigation" style="display:block;width:100%;height:100%;object-fit:contain;"></div>
+            <div style="flex:1 1 220px;min-width:200px;">
+              <div style="display:flex;gap:16px;align-items:stretch;"><svg width="10" height="64" viewBox="0 0 10 64" style="display:block;flex:0 0 auto;" aria-hidden="true"><path d="M5 0 Q0 8 5 16 T5 32 T5 48 T5 64" fill="none" stroke="#e6a99b" stroke-width="3" stroke-linecap="round"></path></svg><div><h3 style="font-family:Arial, Helvetica, sans-serif;font-weight:500;font-size:clamp(1.6rem,2.4vw,2rem);color:#1c2b22;margin-bottom:12px;">Lateral Navigation</h3><p style="font-size:1.02rem;line-height:1.74;color:rgba(28,43,34,0.88);text-wrap:pretty;">Freeform navigation so operators can multitask across kit setup, procedure input, and live monitoring.</p></div></div>
+            </div>
+          </div>
+
+          <div class="feature-row" style="display:flex;flex-wrap:wrap;gap:clamp(24px,4vw,48px);align-items:center;flex-direction:row-reverse;">
+            <div style="flex:1 1 360px;min-width:230px;width:100%;border-radius:8px;box-sizing:border-box;aspect-ratio:700/394;overflow:hidden;"><img src="uploads/alerts.gif" alt="Clear Alerts" style="display:block;width:100%;height:100%;object-fit:contain;"></div>
+            <div style="flex:1 1 220px;min-width:200px;">
+              <div style="display:flex;gap:16px;align-items:stretch;"><svg width="10" height="64" viewBox="0 0 10 64" style="display:block;flex:0 0 auto;" aria-hidden="true"><path d="M5 0 Q0 8 5 16 T5 32 T5 48 T5 64" fill="none" stroke="#e6a99b" stroke-width="3" stroke-linecap="round"></path></svg><div><h3 style="font-family:Arial, Helvetica, sans-serif;font-weight:500;font-size:clamp(1.6rem,2.4vw,2rem);color:#1c2b22;margin-bottom:12px;">Clear Alerts</h3><p style="font-size:1.02rem;line-height:1.74;color:rgba(28,43,34,0.88);text-wrap:pretty;">Concise troubleshooting steps paired with robust, intuitive alert states.</p></div></div>
+            </div>
+          </div>
+
+          <div class="feature-row" style="display:flex;flex-wrap:wrap;gap:clamp(24px,4vw,48px);align-items:center;">
+            <div style="flex:1 1 360px;min-width:230px;width:100%;border-radius:8px;box-sizing:border-box;aspect-ratio:700/394;overflow:hidden;"><img src="uploads/dashboard.gif" alt="Run Screen Dashboard" style="display:block;width:100%;height:100%;object-fit:contain;"></div>
+            <div style="flex:1 1 220px;min-width:200px;">
+              <div style="display:flex;gap:16px;align-items:stretch;"><svg width="10" height="64" viewBox="0 0 10 64" style="display:block;flex:0 0 auto;" aria-hidden="true"><path d="M5 0 Q0 8 5 16 T5 32 T5 48 T5 64" fill="none" stroke="#e6a99b" stroke-width="3" stroke-linecap="round"></path></svg><div><h3 style="font-family:Arial, Helvetica, sans-serif;font-weight:500;font-size:clamp(1.6rem,2.4vw,2rem);color:#1c2b22;margin-bottom:12px;">Run Screen Dashboard</h3><p style="font-size:1.02rem;line-height:1.74;color:rgba(28,43,34,0.88);text-wrap:pretty;">A monitoring view optimized for legibility from across the room.</p></div></div>
+            </div>
+          </div>
+
+          <div class="feature-row" style="display:flex;flex-wrap:wrap;gap:clamp(24px,4vw,48px);align-items:center;flex-direction:row-reverse;">
+            <div style="flex:1 1 360px;min-width:230px;width:100%;border-radius:8px;box-sizing:border-box;aspect-ratio:700/394;overflow:hidden;"><img src="uploads/priorities.gif" alt="Product Priorities and Recalculate" style="display:block;width:100%;height:100%;object-fit:contain;"></div>
+            <div style="flex:1 1 220px;min-width:200px;">
+              <div style="display:flex;gap:16px;align-items:stretch;"><svg width="10" height="64" viewBox="0 0 10 64" style="display:block;flex:0 0 auto;" aria-hidden="true"><path d="M5 0 Q0 8 5 16 T5 32 T5 48 T5 64" fill="none" stroke="#e6a99b" stroke-width="3" stroke-linecap="round"></path></svg><div><h3 style="font-family:Arial, Helvetica, sans-serif;font-weight:500;font-size:clamp(1.6rem,2.4vw,2rem);color:#1c2b22;margin-bottom:12px;">Product Priorities &amp; Recalculate</h3><p style="font-size:1.02rem;line-height:1.74;color:rgba(28,43,34,0.88);text-wrap:pretty;">A new capability letting operators rank product priority on the fly and instantly recalculate the recommended procedure around it.</p></div></div>
+            </div>
+          </div>
+
         </div>
       </section>
 
@@ -245,7 +311,10 @@
         <div style="max-width:70ch;">
           <span style="font-size:clamp(2.4rem,3.6vw,3.2rem);letter-spacing:0.01em;text-transform:uppercase;color:#c1694f;display:block;margin-bottom:12px;line-height:1.02;">Deliver</span>
           <h3 style="font-family:Arial, Helvetica, sans-serif;font-weight:400;font-size:clamp(1.6rem,2.6vw,2.1rem);line-height:1.12;color:#1c2b22;margin-bottom:16px;">Testing &amp; handoff.</h3>
-          <p style="font-size:1.02rem;line-height:1.74;color:rgba(28,43,34,0.82);text-wrap:pretty;">The final experience was validated across two additional rounds of research - a virtual evaluative study with external blood center operators, and an in-person/virtual formative usability study that benchmarked the design directly against current client and competitor devices. High-fidelity wireframes and an interactive, non-coded prototype supported both testing and developer handoff.</p>
+          <p style="font-size:1.02rem;line-height:1.74;color:rgba(28,43,34,0.82);text-wrap:pretty;">The final experience was validated across two additional rounds of research, a virtual evaluative study with external blood center operators, and an in-person/virtual formative usability study that benchmarked the design directly against current client and competitor devices. High-fidelity wireframes and an interactive, non-coded prototype supported both testing and developer handoff.</p>
+        </div>
+        <div style="margin-top:40px;">
+          <div style="font-size:0.72rem;letter-spacing:0.16em;text-transform:uppercase;color:#5f7d68;margin-bottom:16px;">The deliverable · High Fidelity Wireframes</div>
         </div>
       </section>
 
@@ -265,10 +334,10 @@
           </div>
           <div style="background:#1a2a22;border:1px solid rgba(236,227,214,0.1);border-radius:18px;padding:26px;">
             <div style="font-family:Arial, Helvetica, sans-serif;font-size:2.8rem;color:#c1694f;line-height:1;margin-bottom:8px;">6</div>
-            <div style="font-size:0.9rem;line-height:1.5;color:rgba(236,227,214,0.6);">Cross-functional groups involved - marketing (local &amp; global), sales, and software &amp; mechanical engineering.</div>
+            <div style="font-size:0.9rem;line-height:1.5;color:rgba(236,227,214,0.6);">Cross-functional groups involved, marketing (local &amp; global), sales, and software &amp; mechanical engineering.</div>
           </div>
         </div>
-        <p style="font-family:Arial, Helvetica, sans-serif;font-style:italic;font-weight:300;font-size:1.25rem;line-height:1.6;color:rgba(236,227,214,0.66);max-width:54ch;margin-bottom:40px;text-wrap:pretty;">"Deep dives with the engineers building the instrument also opened up conversations about IP ownership possibilities in the apheresis space - a thread that carried past this engagement."</p>
+        <p style="font-family:Arial, Helvetica, sans-serif;font-style:italic;font-weight:300;font-size:1.25rem;line-height:1.6;color:rgba(236,227,214,0.66);max-width:54ch;margin-bottom:40px;text-wrap:pretty;">"Deep dives with the engineers building the instrument also opened up conversations about IP ownership possibilities in the apheresis space, a thread that carried past this engagement."</p>
         <span style="font-family:Arial, Helvetica, sans-serif;font-style:italic;font-size:clamp(2.15rem,3.4vw,2.95rem);letter-spacing:0.005em;color:#e6a99b;display:block;margin-bottom:28px;">More case studies</span>
         <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(240px, 1fr));gap:28px;margin-bottom:48px;">
           <a href="case-matchx.html" style="text-decoration:none;color:inherit;display:block;">
@@ -279,7 +348,12 @@
           <a href="case-matchx-training-tool.html" style="text-decoration:none;color:inherit;display:block;">
             <div style="border-radius:8px;overflow:hidden;background:#1a2a22;margin-bottom:16px;"><img src="uploads/BA-Plate-5.png" alt="MatchX Training Tool cover" style="display:block;width:100%;height:clamp(180px,20vw,260px);object-fit:cover;"></div>
             <h4 style="font-size:1.05rem;font-weight:600;color:#e6a99b;margin-bottom:8px;">MatchX Training Tool</h4>
-            <p style="font-size:0.92rem;line-height:1.6;color:rgba(236,227,214,0.6);text-wrap:pretty;">Teaching the platform before the platform ships - an in-app training module built alongside the product itself.</p>
+            <p style="font-size:0.92rem;line-height:1.6;color:rgba(236,227,214,0.6);text-wrap:pretty;">Teaching the platform before the platform ships, an in-app training module built alongside the product itself.</p>
+          </a>
+          <a href="case-cardiac-heuristic.html" style="text-decoration:none;color:inherit;display:block;">
+            <div style="position:relative;border-radius:8px;overflow:hidden;background:#1a2a22;margin-bottom:16px;"><img src="images/case-3.png" alt="Cardiac Device Heuristic cover" style="display:block;width:100%;height:clamp(180px,20vw,260px);object-fit:cover;filter:blur(6px);"><div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(21,35,28,0.28);"><div style="width:36px;height:36px;border-radius:50%;background:rgba(21,35,28,0.75);backdrop-filter:blur(4px);display:flex;align-items:center;justify-content:center;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#ece3d6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"></rect><path d="M8 11V7a4 4 0 0 1 8 0v4"></path></svg></div></div></div>
+            <h4 style="font-size:1.05rem;font-weight:600;color:#e6a99b;margin-bottom:8px;">Cardiac Device Heuristic</h4>
+            <p style="font-size:0.92rem;line-height:1.6;color:rgba(236,227,214,0.6);text-wrap:pretty;">An embedded UX and interaction review of a life-critical cardiac device, grounded in heuristic research.</p>
           </a>
         </div>
 
@@ -292,7 +366,7 @@
     </main>
 </div>
 
-<!-- ───────────────────────── FOOTER ───────────────────────── -->
+<!-- FOOTER -->
 <footer style="background:#faf7f1;border-top:1px solid rgba(28,43,34,0.07);padding:42px 7vw;">
   <div style="max-width:1180px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:18px;">
     <a href="index.html" style="font-family:Arial, Helvetica, sans-serif;font-size:1.2rem;color:rgba(28,43,34,0.75);text-decoration:none;">Adi Favela</a>
@@ -317,6 +391,16 @@ document.addEventListener('DOMContentLoaded', function () {
       error.style.display = 'block';
     }
   });
+
+  var heroContainer = document.getElementById('apheresisHero');
+  if (heroContainer) {
+    var heroImgs = Array.prototype.slice.call(heroContainer.querySelectorAll('img'));
+    var hi = 0;
+    setInterval(function () {
+      hi = (hi + 1) % heroImgs.length;
+      heroImgs.forEach(function (img, idx) { img.style.opacity = idx === hi ? '1' : '0'; });
+    }, 2400);
+  }
 
   var steps = Array.prototype.slice.call(document.querySelectorAll('.bar-step'));
   if (steps.length) {
@@ -374,26 +458,24 @@ document.addEventListener('DOMContentLoaded', function () {
     requestAnimationFrame(sync);
     setTimeout(sync, 300);
   }
-});
-</script>
-<script>
-(function(){
+
   var btn = document.getElementById('navToggle');
   var links = document.getElementById('navLinks');
-  if (!btn || !links) return;
-  btn.addEventListener('click', function(){
-    var open = links.classList.toggle('nav-open');
-    btn.classList.toggle('open', open);
-    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-  });
-  links.querySelectorAll('a').forEach(function(a){
-    a.addEventListener('click', function(){
-      links.classList.remove('nav-open');
-      btn.classList.remove('open');
-      btn.setAttribute('aria-expanded', 'false');
+  if (btn && links) {
+    btn.addEventListener('click', function(){
+      var open = links.classList.toggle('nav-open');
+      btn.classList.toggle('open', open);
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
     });
-  });
-})();
+    links.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', function(){
+        links.classList.remove('nav-open');
+        btn.classList.remove('open');
+        btn.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
+});
 </script>
 </body>
 </html>
