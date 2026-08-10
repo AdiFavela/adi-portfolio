@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pediatric Heuristic Analysis - Adi Favela</title>
+<meta name="description" content="A UX/UI case study on building a custom heuristic framework, grounded in linguistics and childhood development research, to evaluate a pediatric Instructions for Use label for a confidential specialty pharmaceutical client under NDA.">
+<meta property="og:title" content="Pediatric Heuristic Analysis - Adi Favela">
+<meta property="og:description" content="A UX/UI case study on building a custom heuristic framework, grounded in linguistics and childhood development research, to evaluate a pediatric Instructions for Use label for a confidential specialty pharmaceutical client under NDA.">
+<meta property="og:url" content="https://adi-portfolio-lovat.vercel.app/case-pediatric-heuristic.html">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Pediatric Heuristic Analysis - Adi Favela">
+<meta name="twitter:description" content="A UX/UI case study on building a custom heuristic framework, grounded in linguistics and childhood development research, to evaluate a pediatric Instructions for Use label for a confidential specialty pharmaceutical client under NDA.">
+<script>
+  if (localStorage.getItem('cs-unlock-ped-heuristics') === '1') {
+    document.documentElement.className += ' ped-unlocked';
+  }
+</script>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { background: #faf7f1; color: #1c2b22; font-family: Arial, Helvetica, sans-serif; font-weight: 300; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+  .bar-circle:hover { border-color: #c1694f !important; }
+  .bar-label:hover { color: #1c2b22 !important; }
+  #csBarScroll { scrollbar-width: none; -ms-overflow-style: none; }
+  #csBarScroll::-webkit-scrollbar { display: none; }
+  .cs-back-arrow { display: inline-block; transition: transform .25s ease; }
+  a:hover > .cs-back-arrow { transform: translateX(-4px); }
+  .nav-link{position:relative;transition:color .2s ease;}
+  .nav-link::after{content:'';position:absolute;left:0;right:0;bottom:-4px;height:1px;background:#c1694f;transform:scaleX(0);transform-origin:left;transition:transform .28s cubic-bezier(.2,.7,.2,1);}
+  .nav-link:hover{color:#c1694f;}
+  .nav-link:hover::after{transform:scaleX(1);}
+  .nav-active{color:#c1694f !important;font-weight:500 !important;}
+  .nav-active::after{transform:scaleX(1) !important;}
+  .work-btn{transition:background .2s,transform .2s;}
+  .work-btn:hover{background:#d99384;transform:translateY(-2px);}
+  #pedLocked { display: block; }
+  #pedUnlocked { display: none; }
+  html.ped-unlocked #pedLocked { display: none; }
+  html.ped-unlocked #pedUnlocked { display: block; }
+  .nav-toggle{display:none;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:44px;height:44px;background:none;border:none;cursor:pointer;padding:0;}
+  .nav-toggle span{display:block;width:24px;height:2px;background:#1c2b22;border-radius:2px;transition:transform .2s ease,opacity .2s ease;}
+  .nav-toggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+  .nav-toggle.open span:nth-child(2){opacity:0;}
+  .nav-toggle.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+  @media (max-width: 700px) {
+    [style*="grid-template-columns"] { grid-template-columns: 1fr !important; }
+    #csBar > div { padding: 14px 7vw !important; }
+    #csBarScroll { align-items: center !important; }
+    .bar-step { gap: 0 !important; }
+    .bar-label { display: none !important; }
+    .bar-circle { width: 10px !important; height: 10px !important; }
+    .bar-conn { margin-top: 0 !important; }
+    .nav-toggle { display: flex; }
+    #navLinks { display: none !important; position: absolute; top: 100%; right: 0; width: 50%; background: #faf7f1; flex-direction: column; align-items: flex-end !important; gap: 4px !important; padding: 8px 7vw 20px; border-bottom: 1px solid rgba(28,43,34,0.08); }
+    #navLinks.nav-open { display: flex !important; }
+    #navLinks .nav-link { padding: 10px 0; width: 100%; text-align: right; }
+    [style*="gap:clamp(24px,4vw,48px)"] { gap: 12px !important; }
+    [style*="gap:clamp(28px,4vw,56px)"] { gap: 12px !important; }
+    .feature-row { flex-direction: column-reverse !important; }
+    .feature-row > div { flex: 0 0 auto !important; width: 100% !important; }
+  }
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 150; transition: transform .3s ease; }
+  nav.nav-hidden { transform: translateY(-100%); }
+</style>
+</head>
+<body>
+
+<!-- PASSWORD GATE -->
+<div id="pedLocked">
+  <div style="min-height:100vh;display:flex;align-items:center;justify-content:center;background:#15231c;padding:24px;">
+    <div style="max-width:380px;width:100%;text-align:center;">
+      <div style="font-family:Arial, Helvetica, sans-serif;font-size:1.4rem;color:#ece3d6;margin-bottom:8px;">This case study is password protected</div>
+      <p style="font-size:0.92rem;color:rgba(236,227,214,0.55);margin-bottom:24px;">Enter the password to continue.</p>
+      <form id="pwForm" style="display:flex;flex-direction:column;gap:12px;">
+        <input type="password" id="pwInput" placeholder="Password" style="width:100%;padding:12px 16px;border-radius:10px;border:1px solid rgba(236,227,214,0.2);background:#1a2a22;color:#ece3d6;font-size:1rem;box-sizing:border-box;">
+        <div id="pwError" style="display:none;color:#e6a99b;font-size:0.85rem;">Incorrect password, try again.</div>
+        <button type="submit" style="background:#e6a99b;color:#1c2b22;padding:12px 20px;border-radius:10px;border:none;font-size:1rem;font-weight:500;cursor:pointer;">Unlock</button>
+      </form>
+      <p style="font-size:0.8rem;font-style:italic;color:#e6a99b;margin-top:20px;">🔐 Nothing shady. Just under NDA.</p>
+    </div>
+  </div>
+</div>
+
+<!-- UNLOCKED CONTENT -->
+<div id="pedUnlocked">
+<nav style="display:flex;align-items:center;justify-content:space-between;padding:14px 7vw;background:rgba(250,247,241,0.92);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid rgba(28,43,34,0.08);">
+  <a href="index.html" style="display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:rgba(28,43,34,0.8);font-size:0.95rem;letter-spacing:0.02em;"><span class="cs-back-arrow">←</span> Home</a>
+  <button id="navToggle" class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  <div id="navLinks" style="display:flex;gap:26px;">
+    <a class="nav-link nav-active" href="work.html" style="font-size:0.95rem;letter-spacing:0.04em;color:rgba(28,43,34,0.78);text-decoration:none;">Case Studies</a>
+    <a class="nav-link" href="resume.html" style="font-size:0.95rem;letter-spacing:0.04em;color:rgba(28,43,34,0.78);text-decoration:none;">Resume</a>
+    <a class="nav-link" href="about.html" style="font-size:0.95rem;letter-spacing:0.04em;color:rgba(28,43,34,0.78);text-decoration:none;">About</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section style="position:relative;background:#faf7f1;padding:76px 0 60px;overflow:hidden;">
+  <div style="max-width:1120px;margin:0 auto;padding:0 7vw;">
+    <div style="display:flex;gap:clamp(24px,4vw,64px);align-items:flex-start;">
+      <div style="flex:1 1 auto;min-width:0;">
+    <span style="font-size:0.78rem;letter-spacing:0.24em;text-transform:uppercase;color:#c1694f;display:block;margin-bottom:20px;">Case Study</span>
+    <h1 style="font-family:Arial, Helvetica, sans-serif;font-weight:300;font-size:clamp(2.6rem,5.4vw,4.6rem);line-height:1.04;letter-spacing:-0.01em;color:#1c2b22;max-width:18ch;text-wrap:balance;margin-bottom:18px;">Pediatric Heuristic Analysis</h1>
+    <p style="font-family:Arial, Helvetica, sans-serif;font-style:italic;font-size:clamp(1.25rem,2.2vw,1.7rem);line-height:1.25;color:#1c2b22;max-width:34ch;text-wrap:balance;margin-bottom:20px;">Designing and Owning an Original Heuristic Framework for a Pediatric Drug Label</p>
+    <p style="font-size:1.15rem;line-height:1.6;color:rgba(28,43,34,0.62);max-width:60ch;text-wrap:pretty;margin-bottom:34px;">A UX/UI case study on building a custom heuristic framework, grounded in linguistics and childhood development research, to evaluate a pediatric Instructions for Use (IFU) label for a confidential specialty pharmaceutical client under NDA.</p>
+    <div style="display:flex;flex-wrap:wrap;gap:40px;padding-top:26px;border-top:1px solid rgba(28,43,34,0.1);">
+      <div><div style="font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(28,43,34,0.38);margin-bottom:8px;">Role</div><div style="font-size:1rem;color:#1c2b22;">UX Designer</div></div>
+      <div><div style="font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(28,43,34,0.38);margin-bottom:8px;">Timeline</div><div style="font-size:1rem;color:#1c2b22;">April to July 2026</div></div>
+      <div><div style="font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(28,43,34,0.38);margin-bottom:8px;">Platform</div><div style="font-size:1rem;color:#1c2b22;">Confidential · Print IFU</div></div>
+    </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HORIZONTAL PROGRESS BAR -->
+<div id="csBar" style="position:sticky;top:0;z-index:60;background:rgba(21,35,28,0.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid rgba(236,227,214,0.1);">
+  <div style="max-width:1120px;margin:0 auto;padding:60px 7vw;">
+    <div style="position:relative;">
+      <div id="csBarScroll" style="display:flex;align-items:flex-start;overflow-x:auto;padding:2px 0;">
+        <div class="bar-step" style="display:flex;flex-direction:column;align-items:center;gap:10px;flex:0 0 auto;"><a class="bar-circle" href="#overview" data-target="overview" style="width:34px;height:34px;border-radius:50%;border:2px solid rgba(236,227,214,0.3);display:flex;align-items:center;justify-content:center;font-size:0.9rem;color:rgba(236,227,214,0.5);background:transparent;text-decoration:none;transition:background .25s ease,border-color .25s ease,color .25s ease,transform .25s ease,box-shadow .25s ease;">1</a><a class="bar-label" href="#overview" data-target="overview" style="font-size:0.8rem;letter-spacing:0.08em;text-transform:uppercase;color:rgba(236,227,214,0.45);text-decoration:none;white-space:nowrap;transition:color .25s ease;">Overview</a></div>
+        <div class="bar-conn" style="flex:1 1 auto;min-width:22px;height:2px;margin-top:16px;background:rgba(236,227,214,0.18);transition:background .3s ease;"></div>
+        <div class="bar-step" style="display:flex;flex-direction:column;align-items:center;gap:10px;flex:0 0 auto;"><a class="bar-circle" href="#approach" data-target="approach" style="width:34px;height:34px;border-radius:50%;border:2px solid rgba(236,227,214,0.3);display:flex;align-items:center;justify-content:center;font-size:0.9rem;color:rgba(236,227,214,0.5);background:transparent;text-decoration:none;transition:background .25s ease,border-color .25s ease,color .25s ease,transform .25s ease,box-shadow .25s ease;">2</a><a class="bar-label" href="#approach" data-target="approach" style="font-size:0.8rem;letter-spacing:0.08em;text-transform:uppercase;color:rgba(236,227,214,0.45);text-decoration:none;white-space:nowrap;transition:color .25s ease;">Approach</a></div>
+        <div class="bar-conn" style="flex:1 1 auto;min-width:22px;height:2px;margin-top:16px;background:rgba(236,227,214,0.18);transition:background .3s ease;"></div>
+        <div class="bar-step" style="display:flex;flex-direction:column;align-items:center;gap:10px;flex:0 0 auto;"><a class="bar-circle" href="#step-1" data-target="step-1" style="width:34px;height:34px;border-radius:50%;border:2px solid rgba(236,227,214,0.3);display:flex;align-items:center;justify-content:center;font-size:0.9rem;color:rgba(236,227,214,0.5);background:transparent;text-decoration:none;transition:background .25s ease,border-color .25s ease,color .25s ease,transform .25s ease,box-shadow .25s ease;">3</a><a class="bar-label" href="#step-1" data-target="step-1" style="font-size:0.8rem;letter-spacing:0.08em;text-transform:uppercase;color:rgba(236,227,214,0.45);text-decoration:none;white-space:nowrap;transition:color .25s ease;">Discover</a></div>
+        <div class="bar-conn" style="flex:1 1 auto;min-width:22px;height:2px;margin-top:16px;background:rgba(236,227,214,0.18);transition:background .3s ease;"></div>
+        <div class="bar-step" style="display:flex;flex-direction:column;align-items:center;gap:10px;flex:0 0 auto;"><a class="bar-circle" href="#step-2" data-target="step-2" style="width:34px;height:34px;border-radius:50%;border:2px solid rgba(236,227,214,0.3);display:flex;align-items:center;justify-content:center;font-size:0.9rem;color:rgba(236,227,214,0.5);background:transparent;text-decoration:none;transition:background .25s ease,border-color .25s ease,color .25s ease,transform .25s ease,box-shadow .25s ease;">4</a><a class="bar-label" href="#step-2" data-target="step-2" style="font-size:0.8rem;letter-spacing:0.08em;text-transform:uppercase;color:rgba(236,227,214,0.45);text-decoration:none;white-space:nowrap;transition:color .25s ease;">Define</a></div>
+        <div class="bar-conn" style="flex:1 1 auto;min-width:22px;height:2px;margin-top:16px;background:rgba(236,227,214,0.18);transition:background .3s ease;"></div>
+        <div class="bar-step" style="display:flex;flex-direction:column;align-items:center;gap:10px;flex:0 0 auto;"><a class="bar-circle" href="#step-3" data-target="step-3" style="width:34px;height:34px;border-radius:50%;border:2px solid rgba(236,227,214,0.3);display:flex;align-items:center;justify-content:center;font-size:0.9rem;color:rgba(236,227,214,0.5);background:transparent;text-decoration:none;transition:background .25s ease,border-color .25s ease,color .25s ease,transform .25s ease,box-shadow .25s ease;">5</a><a class="bar-label" href="#step-3" data-target="step-3" style="font-size:0.8rem;letter-spacing:0.08em;text-transform:uppercase;color:rgba(236,227,214,0.45);text-decoration:none;white-space:nowrap;transition:color .25s ease;">Design</a></div>
+        <div class="bar-conn" style="flex:1 1 auto;min-width:22px;height:2px;margin-top:16px;background:rgba(236,227,214,0.18);transition:background .3s ease;"></div>
+        <div class="bar-step" style="display:flex;flex-direction:column;align-items:center;gap:10px;flex:0 0 auto;"><a class="bar-circle" href="#deliverable" data-target="deliverable" style="width:34px;height:34px;border-radius:50%;border:2px solid rgba(236,227,214,0.3);display:flex;align-items:center;justify-content:center;font-size:0.9rem;color:rgba(236,227,214,0.5);background:transparent;text-decoration:none;transition:background .25s ease,border-color .25s ease,color .25s ease,transform .25s ease,box-shadow .25s ease;">6</a><a class="bar-label" href="#deliverable" data-target="deliverable" style="font-size:0.8rem;letter-spacing:0.08em;text-transform:uppercase;color:rgba(236,227,214,0.45);text-decoration:none;white-space:nowrap;transition:color .25s ease;">Deliverable</a></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- BODY -->
+<div style="background:#f4efe3;">
+    <main id="csMain" style="max-width:820px;margin:0 auto;padding:64px 7vw 100px;">
+
+      <!-- OVERVIEW -->
+      <section id="overview" style="scroll-margin-top:84px;">
+        <span style="font-size:clamp(2.4rem,3.6vw,3.2rem);letter-spacing:0.01em;text-transform:uppercase;color:#c1694f;display:block;margin-bottom:12px;line-height:1.02;">Overview</span>
+        <h2 style="font-family:Arial, Helvetica, sans-serif;font-weight:300;font-size:clamp(1.9rem,3.2vw,2.7rem);line-height:1.1;color:#1c2b22;margin-bottom:24px;text-wrap:balance;">Defining what "good" meant for a pediatric label before evaluating one.</h2>
+        <div style="max-width:74ch;">
+          <h3 style="font-family:Arial, Helvetica, sans-serif;font-weight:500;font-size:1.3rem;color:#1c2b22;margin-bottom:10px;">The Ask</h3>
+          <p style="font-size:1.05rem;line-height:1.78;color:rgba(28,43,34,0.64);text-wrap:pretty;margin-bottom:22px;">The client, a specialty pharmaceutical company whose identity is withheld under NDA, needed an expert review of the pediatric Instructions for Use (IFU) accompanying one of their products. Standard usability heuristics weren't built for regulated health-literacy documents written for children and caregivers, so the ask wasn't just to run an evaluation. It was to define what "good" even meant for this kind of material first.</p>
+          <h3 style="font-family:Arial, Helvetica, sans-serif;font-weight:500;font-size:1.3rem;color:#1c2b22;margin-bottom:10px;">My Role</h3>
+          <p style="font-size:1.05rem;line-height:1.78;color:rgba(28,43,34,0.64);text-wrap:pretty;margin-bottom:16px;">UX Designer, April to July 2026. My responsibilities included:</p>
+          <div style="display:flex;flex-direction:column;gap:10px;">
+            <div style="display:flex;gap:14px;align-items:flex-start;"><span style="color:#c1694f;font-size:1.1rem;line-height:1.5;">•</span><span style="font-size:1rem;line-height:1.6;color:rgba(28,43,34,0.6);">Researching, drafting, and owning a full heuristic framework built specifically for pediatric health-literacy material, rather than adapting an existing one</span></div>
+            <div style="display:flex;gap:14px;align-items:flex-start;"><span style="color:#c1694f;font-size:1.1rem;line-height:1.5;">•</span><span style="font-size:1rem;line-height:1.6;color:rgba(28,43,34,0.6);">Benchmarking the pediatric IFU against comparable labels to understand the existing landscape</span></div>
+            <div style="display:flex;gap:14px;align-items:flex-start;"><span style="color:#c1694f;font-size:1.1rem;line-height:1.5;">•</span><span style="font-size:1rem;line-height:1.6;color:rgba(28,43,34,0.6);">Conducting the heuristic evaluation against the finalized framework</span></div>
+            <div style="display:flex;gap:14px;align-items:flex-start;"><span style="color:#c1694f;font-size:1.1rem;line-height:1.5;">•</span><span style="font-size:1rem;line-height:1.6;color:rgba(28,43,34,0.6);">Validating the framework against established readability instruments</span></div>
+            <div style="display:flex;gap:14px;align-items:flex-start;"><span style="color:#c1694f;font-size:1.1rem;line-height:1.5;">•</span><span style="font-size:1rem;line-height:1.6;color:rgba(28,43,34,0.6);">Delivering findings that directly informed the IFU revision, which was handed off to feed a regulatory submission</span></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CHALLENGE -->
+      <section id="challenge" style="scroll-margin-top:84px;margin-top:40px;">
+        <span style="font-family:Arial, Helvetica, sans-serif;font-style:italic;font-size:clamp(2.15rem,3.4vw,2.95rem);letter-spacing:0.005em;color:#5f7d68;display:flex;align-items:center;gap:14px;margin-bottom:12px;line-height:1.05;"><span style="width:22px;height:1px;background:#5f7d68;flex:0 0 auto;"></span>The Challenge</span>
+        <div style="display:flex;flex-direction:column;gap:14px;">
+          <div style="display:flex;gap:14px;align-items:flex-start;"><span style="color:#c1694f;font-size:1.1rem;line-height:1.5;">•</span><span style="font-size:1rem;line-height:1.6;color:rgba(28,43,34,0.6);">No standard heuristic set exists for pediatric health-literacy materials; most usability heuristics are built for software interfaces, not regulated health information written for children and their caregivers</span></div>
+          <div style="display:flex;gap:14px;align-items:flex-start;"><span style="color:#c1694f;font-size:1.1rem;line-height:1.5;">•</span><span style="font-size:1rem;line-height:1.6;color:rgba(28,43,34,0.6);">The label had to work for two audiences at once, the child and the caregiver, each at a different reading and comprehension level</span></div>
+          <div style="display:flex;gap:14px;align-items:flex-start;"><span style="color:#c1694f;font-size:1.1rem;line-height:1.5;">•</span><span style="font-size:1rem;line-height:1.6;color:rgba(28,43,34,0.6);">Findings needed to be rigorous and defensible enough to inform an actual regulatory submission, not just serve as design opinion</span></div>
+        </div>
+      </section>
+
+      <!-- APPROACH -->
+      <section id="approach" style="scroll-margin-top:84px;margin-top:56px;padding-top:56px;border-top:1px solid rgba(28,43,34,0.08);">
+        <span style="font-size:clamp(2.4rem,3.6vw,3.2rem);letter-spacing:0.01em;text-transform:uppercase;color:#c1694f;display:block;margin-bottom:12px;line-height:1.02;">Approach</span>
+        <h2 style="font-family:Arial, Helvetica, sans-serif;font-weight:300;font-size:clamp(1.9rem,3.2vw,2.7rem);line-height:1.1;color:#1c2b22;margin-bottom:24px;text-wrap:balance;">Building the framework, then grounding it in the literature.</h2>
+        <p style="font-size:1.05rem;line-height:1.78;color:rgba(28,43,34,0.64);text-wrap:pretty;margin-bottom:30px;max-width:70ch;">Since no existing heuristic set fit a pediatric-specific health-literacy context, I built one, anchoring it in established, credible external sources, then layering in a linguistics and childhood-education lens.</p>
+        <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:24px;">
+          <div style="padding-right:24px;border-right:1px solid rgba(28,43,34,0.14);">
+            <div style="font-size:0.72rem;letter-spacing:0.16em;text-transform:uppercase;color:#5f7d68;margin-bottom:16px;">Theoretical Foundations</div>
+            <div style="display:flex;flex-direction:column;gap:8px;">
+              <div style="display:flex;gap:12px;align-items:flex-start;"><span style="color:#c1694f;font-size:1.05rem;line-height:1.5;">•</span><span style="font-size:0.98rem;line-height:1.6;color:rgba(28,43,34,0.6);">American Academy of Pediatrics: developmental readiness, caregiver involvement</span></div>
+              <div style="display:flex;gap:12px;align-items:flex-start;"><span style="color:#c1694f;font-size:1.05rem;line-height:1.5;">•</span><span style="font-size:0.98rem;line-height:1.6;color:rgba(28,43,34,0.6);">CDC Health Literacy Guidelines: plain language, actionability</span></div>
+              <div style="display:flex;gap:12px;align-items:flex-start;"><span style="color:#c1694f;font-size:1.05rem;line-height:1.5;">•</span><span style="font-size:0.98rem;line-height:1.6;color:rgba(28,43,34,0.6);">NIH Clear Communication guidelines: comprehension, chunking, visuals</span></div>
+              <div style="display:flex;gap:12px;align-items:flex-start;"><span style="color:#c1694f;font-size:1.05rem;line-height:1.5;">•</span><span style="font-size:0.98rem;line-height:1.6;color:rgba(28,43,34,0.6);">Early childhood education frameworks: Piaget's stages of cognitive development, Vygotsky's Zone of Proximal Development, and dual coding theory, grounding tone, reading level, and engagement in how children actually process information at different ages</span></div>
+            </div>
+          </div>
+          <div>
+            <div style="font-size:0.72rem;letter-spacing:0.16em;text-transform:uppercase;color:#5f7d68;margin-bottom:16px;">Readability Validation</div>
+            <p style="font-size:0.98rem;line-height:1.65;color:rgba(28,43,34,0.66);text-wrap:pretty;">To keep the framework from being purely qualitative, I cross-checked it against established readability instruments: Flesch-Kincaid (the standard used to validate U.S. Army operating manuals since 1975, and by several states to keep insurance, legal, and financial documents at or below a 9th-grade reading level), SMOG (a method well-suited to health-literacy material, which I'd previously calculated by hand during my linguistics coursework), and the Spache formula and Lexile levels as secondary references.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROCESS STEP 01 -->
+      <section id="step-1" style="scroll-margin-top:84px;margin-top:64px;padding-top:56px;border-top:1px solid rgba(28,43,34,0.08);">
+        <span style="font-size:clamp(2.4rem,3.6vw,3.2rem);letter-spacing:0.01em;text-transform:uppercase;color:#c1694f;display:block;margin-bottom:12px;line-height:1.02;">Discover</span>
+        <h3 style="font-family:Arial, Helvetica, sans-serif;font-weight:400;font-size:clamp(1.6rem,2.6vw,2.1rem);line-height:1.12;color:#1c2b22;margin-bottom:16px;">Benchmarking the label landscape.</h3>
+        <p style="font-size:1.02rem;line-height:1.74;color:rgba(28,43,34,0.62);text-wrap:pretty;max-width:70ch;">Before drafting a single heuristic, I benchmarked the existing pediatric label landscape, reviewing comparable pediatric IFUs to understand how other labels handled structure and instructions, target population and collection considerations, and language burden. This benchmarking became its own section of the final deliverable, giving the client a grounded before-picture rather than abstract critique.</p>
+      </section>
+
+      <!-- PROCESS STEP 02 -->
+      <section id="step-2" style="scroll-margin-top:84px;margin-top:64px;padding-top:56px;border-top:1px solid rgba(28,43,34,0.08);">
+        <span style="font-size:clamp(2.4rem,3.6vw,3.2rem);letter-spacing:0.01em;text-transform:uppercase;color:#c1694f;display:block;margin-bottom:12px;line-height:1.02;">Define</span>
+        <h3 style="font-family:Arial, Helvetica, sans-serif;font-weight:400;font-size:clamp(1.6rem,2.6vw,2.1rem);line-height:1.12;color:#1c2b22;margin-bottom:16px;">Eleven candidate heuristics, refined to eight.</h3>
+        <p style="font-size:1.02rem;line-height:1.74;color:rgba(28,43,34,0.62);text-wrap:pretty;margin-bottom:16px;max-width:70ch;">With the landscape mapped, I drafted a full candidate set of eleven heuristics, each built out with the same structure: a plain-language definition, a checklist of specific criteria, a diagnostic question an evaluator could actually apply section by section, like "Could a child in the target age range understand this without explanation?" or "Does this sound safe and supportive, not cold or scary?", and the specific literature it drew from.</p>
+        <p style="font-size:1.02rem;line-height:1.74;color:rgba(28,43,34,0.62);text-wrap:pretty;margin-bottom:14px;max-width:70ch;">I then refined that set down to the eight heuristics that anchored the final evaluation:</p>
+        <div style="display:flex;flex-direction:column;gap:8px;">
+          <div style="display:flex;gap:12px;align-items:flex-start;"><span style="color:#c1694f;font-size:1.05rem;line-height:1.5;">•</span><span style="font-size:0.98rem;line-height:1.6;color:rgba(28,43,34,0.6);">Environmentally Appropriate Language</span></div>
+          <div style="display:flex;gap:12px;align-items:flex-start;"><span style="color:#c1694f;font-size:1.05rem;line-height:1.5;">•</span><span style="font-size:0.98rem;line-height:1.6;color:rgba(28,43,34,0.6);">User Audience Clarity</span></div>
+          <div style="display:flex;gap:12px;align-items:flex-start;"><span style="color:#c1694f;font-size:1.05rem;line-height:1.5;">•</span><span style="font-size:0.98rem;line-height:1.6;color:rgba(28,43,34,0.6);">Necessity &amp; Non-Threatening Tone</span></div>
+          <div style="display:flex;gap:12px;align-items:flex-start;"><span style="color:#c1694f;font-size:1.05rem;line-height:1.5;">•</span><span style="font-size:0.98rem;line-height:1.6;color:rgba(28,43,34,0.6);">Use of Actionable Instructions</span></div>
+          <div style="display:flex;gap:12px;align-items:flex-start;"><span style="color:#c1694f;font-size:1.05rem;line-height:1.5;">•</span><span style="font-size:0.98rem;line-height:1.6;color:rgba(28,43,34,0.6);">Progressive Structure by Age</span></div>
+          <div style="display:flex;gap:12px;align-items:flex-start;"><span style="color:#c1694f;font-size:1.05rem;line-height:1.5;">•</span><span style="font-size:0.98rem;line-height:1.6;color:rgba(28,43,34,0.6);">Cognitive Load Management</span></div>
+          <div style="display:flex;gap:12px;align-items:flex-start;"><span style="color:#c1694f;font-size:1.05rem;line-height:1.5;">•</span><span style="font-size:0.98rem;line-height:1.6;color:rgba(28,43,34,0.6);">Inclusive &amp; Accessible Communication</span></div>
+          <div style="display:flex;gap:12px;align-items:flex-start;"><span style="color:#c1694f;font-size:1.05rem;line-height:1.5;">•</span><span style="font-size:0.98rem;line-height:1.6;color:rgba(28,43,34,0.6);">Literacy &amp; Critical Clarity</span></div>
+        </div>
+      </section>
+
+      <!-- PROCESS STEP 03 -->
+      <section id="step-3" style="scroll-margin-top:84px;margin-top:64px;padding-top:56px;border-top:1px solid rgba(28,43,34,0.08);">
+        <span style="font-size:clamp(2.4rem,3.6vw,3.2rem);letter-spacing:0.01em;text-transform:uppercase;color:#c1694f;display:block;margin-bottom:12px;line-height:1.02;">Design</span>
+        <h3 style="font-family:Arial, Helvetica, sans-serif;font-weight:400;font-size:clamp(1.6rem,2.6vw,2.1rem);line-height:1.12;color:#1c2b22;margin-bottom:16px;">Applying the framework section by section.</h3>
+        <p style="font-size:1.02rem;line-height:1.74;color:rgba(28,43,34,0.62);text-wrap:pretty;max-width:70ch;">With the framework finalized, I applied it directly to the pediatric IFU, evaluating the label section by section against each of the eight heuristics and documenting findings within a consistent reporting structure. This mirrored the same definition-criteria-question format the heuristics themselves were built on, so every finding was traceable back to a specific, sourced standard rather than a subjective note.</p>
+      </section>
+
+      <!-- DELIVERABLE -->
+      <section id="deliverable" style="scroll-margin-top:84px;margin-top:64px;padding-top:56px;border-top:1px solid rgba(28,43,34,0.08);">
+        <span style="font-size:clamp(2.4rem,3.6vw,3.2rem);letter-spacing:0.01em;text-transform:uppercase;color:#c1694f;display:block;margin-bottom:12px;line-height:1.02;">Deliverable</span>
+        <h3 style="font-family:Arial, Helvetica, sans-serif;font-weight:400;font-size:clamp(1.6rem,2.6vw,2.1rem);line-height:1.12;color:#1c2b22;margin-bottom:16px;">An IFU Expert Review deck.</h3>
+        <p style="font-size:1.02rem;line-height:1.74;color:rgba(28,43,34,0.62);text-wrap:pretty;max-width:70ch;">The final output was an IFU Expert Review deck: a benchmarking comparison section, a heuristic evaluation section organized around the eight finalized heuristics, and an appendix documenting the full heuristic set, language considerations, and benchmark comparisons in detail.</p>
+        <div style="margin-top:56px;background:#15231c;margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw);width:100vw;padding:56px 0;">
+          <div style="max-width:820px;margin:0 auto;padding:0 7vw;">
+            <p style="font-family:Arial, Helvetica, sans-serif;font-style:italic;font-weight:300;font-size:1.25rem;line-height:1.6;color:rgba(236,227,214,0.66);max-width:60ch;text-wrap:pretty;">The findings fed directly into the IFU revision, which was then handed off to support a regulatory submission. This meant the framework I built didn't just critique the existing label; it became the standard the revision was measured against.</p>
+          </div>
+        </div>
+      </section>
+
+      <div style="padding-top:64px;">
+        <span style="font-family:Arial, Helvetica, sans-serif;font-style:italic;font-size:clamp(2.15rem,3.4vw,2.95rem);letter-spacing:0.005em;color:#c1694f;display:block;margin-bottom:28px;">More case studies</span>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(240px, 1fr));gap:28px;margin-bottom:48px;">
+          <a href="case-matchx.html" style="text-decoration:none;color:inherit;display:block;">
+            <div style="border-radius:8px;overflow:hidden;background:rgba(28,43,34,0.06);margin-bottom:16px;"><img src="images/hero-1.png" alt="MatchX cover" style="display:block;width:100%;height:clamp(180px,20vw,260px);object-fit:cover;"></div>
+            <h4 style="font-size:1.05rem;font-weight:600;color:#1c2b22;margin-bottom:8px;">MatchX</h4>
+            <p style="font-size:0.92rem;line-height:1.6;color:rgba(28,43,34,0.6);text-wrap:pretty;">Unifying three fragmented histocompatibility tools into one platform, from research through FDA clearance.</p>
+          </a>
+          <a href="case-cardiac-heuristic.html" style="text-decoration:none;color:inherit;display:block;">
+            <div style="border-radius:8px;overflow:hidden;background:rgba(28,43,34,0.06);margin-bottom:16px;"><img src="uploads/HeroMAG.png" alt="Cardiac Device Heuristic cover" style="display:block;width:100%;height:clamp(180px,20vw,260px);object-fit:cover;"></div>
+            <h4 style="font-size:1.05rem;font-weight:600;color:#1c2b22;margin-bottom:8px;">Cardiac Device Heuristics</h4>
+            <p style="font-size:0.92rem;line-height:1.6;color:rgba(28,43,34,0.6);text-wrap:pretty;">A full-system heuristic evaluation across a multi-portal cardiac device platform.</p>
+          </a>
+          <a href="case-apheresis-device.html" style="text-decoration:none;color:inherit;display:block;">
+            <div style="position:relative;border-radius:8px;overflow:hidden;background:rgba(28,43,34,0.06);margin-bottom:16px;"><img src="uploads/1-home.jpg" alt="Apheresis Device cover" style="display:block;width:100%;height:clamp(180px,20vw,260px);object-fit:cover;filter:blur(6px);"><div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(28,43,34,0.14);"><div style="width:36px;height:36px;border-radius:50%;background:rgba(21,35,28,0.75);backdrop-filter:blur(4px);display:flex;align-items:center;justify-content:center;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#ece3d6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"></rect><path d="M8 11V7a4 4 0 0 1 8 0v4"></path></svg></div></div></div>
+            <h4 style="font-size:1.05rem;font-weight:600;color:#1c2b22;margin-bottom:8px;">Apheresis Device</h4>
+            <p style="font-size:0.92rem;line-height:1.6;color:rgba(28,43,34,0.6);text-wrap:pretty;margin-bottom:8px;">Speed for experts, clarity for beginners, a next-generation GUI for operators of all levels.</p>
+            <p style="font-size:0.8rem;font-style:italic;color:#c1694f;">🔐 Nothing shady. Just under NDA.</p>
+          </a>
+        </div>
+        <div style="display:flex;gap:16px;flex-wrap:wrap;">
+          <a href="work.html" class="work-btn" style="background:#e6a99b;color:#1c2b22;padding:14px 28px;border-radius:16px;font-size:1rem;font-weight:500;text-decoration:none;">All work</a>
+        </div>
+      </div>
+
+    </main>
+</div>
+
+<!-- FOOTER -->
+<footer style="background:#faf7f1;border-top:1px solid rgba(28,43,34,0.07);padding:42px 7vw;">
+  <div style="max-width:1180px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:18px;">
+    <a href="index.html" style="font-family:Arial, Helvetica, sans-serif;font-size:1.2rem;color:rgba(28,43,34,0.75);text-decoration:none;">Adi Favela</a>
+    <div style="font-size:0.85rem;letter-spacing:0.06em;text-transform:uppercase;color:rgba(28,43,34,0.3);">© 2026 Adi Favela</div>
+  </div>
+</footer>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  var navEl = document.querySelector('nav');
+  if (navEl) {
+    var lastScrollY = window.scrollY;
+    var navHeight = navEl.offsetHeight;
+    window.addEventListener('scroll', function () {
+      var y = window.scrollY;
+      if (y <= navHeight || y < lastScrollY) {
+        navEl.classList.remove('nav-hidden');
+      } else if (y > lastScrollY) {
+        navEl.classList.add('nav-hidden');
+      }
+      lastScrollY = y;
+    }, { passive: true });
+  }
+
+  var form = document.getElementById('pwForm');
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var input = document.getElementById('pwInput');
+    var error = document.getElementById('pwError');
+    if (input.value === '010226') {
+      localStorage.setItem('cs-unlock-ped-heuristics', '1');
+      document.documentElement.classList.add('ped-unlocked');
+      error.style.display = 'none';
+      window.dispatchEvent(new Event('scroll'));
+    } else {
+      error.style.display = 'block';
+    }
+  });
+
+  var steps = Array.prototype.slice.call(document.querySelectorAll('.bar-step'));
+  if (steps.length) {
+    var prevActive = -1;
+    function animateFill(el, color) {
+      if (el._fillRaf) cancelAnimationFrame(el._fillRaf);
+      var duration = 550, start = performance.now(), runId = {};
+      el._fillRun = runId;
+      function step(t) {
+        if (el._fillRun !== runId) return;
+        var p = Math.min(1, (t - start) / duration), pct = p * 100;
+        el.style.background = 'conic-gradient(from -90deg, ' + color + ' ' + pct + '%, transparent ' + pct + '%)';
+        if (p < 1) el._fillRaf = requestAnimationFrame(step);
+        else { el.style.background = color; el._fillRaf = null; }
+      }
+      el._fillRaf = requestAnimationFrame(step);
+    }
+    function setSolid(el, color) {
+      if (el._fillRaf) { cancelAnimationFrame(el._fillRaf); el._fillRaf = null; }
+      el._fillRun = null;
+      el.style.background = color;
+    }
+    function sync() {
+      var mid = window.scrollY + window.innerHeight * 0.3, active = 0;
+      steps.forEach(function (st, i) {
+        var c = st.querySelector('.bar-circle');
+        var sec = c && document.getElementById(c.getAttribute('data-target'));
+        if (sec) { var top = sec.getBoundingClientRect().top + window.scrollY; if (top <= mid) active = i; }
+      });
+      steps.forEach(function (st, i) {
+        var on = i === active, done = i < active, reached = i <= active;
+        var c = st.querySelector('.bar-circle'), l = st.querySelector('.bar-label');
+        if (c) {
+          c.style.borderColor = on ? '#6ca417' : (reached ? '#c1694f' : 'rgba(236,227,214,0.3)');
+          c.style.transform = on ? 'scale(1.08)' : 'scale(1)';
+          c.style.boxShadow = on ? '0 0 14px rgba(108,164,23,0.5)' : 'none';
+          if (reached) {
+            if (on && i !== prevActive && prevActive !== -1) { animateFill(c, '#6ca417'); c.dataset.filledColor = 'green'; }
+            else if (!c.dataset.filled || c.dataset.filledColor !== (on ? 'green' : 'terracotta')) { setSolid(c, on ? '#6ca417' : '#c1694f'); c.dataset.filled = '1'; c.dataset.filledColor = on ? 'green' : 'terracotta'; }
+          } else { setSolid(c, 'transparent'); c.dataset.filled = ''; }
+        }
+        if (l) { l.style.color = on ? '#6ca417' : (done ? 'rgba(236,227,214,0.72)' : 'rgba(236,227,214,0.45)'); l.style.fontWeight = on ? '700' : '300'; }
+      });
+      prevActive = active;
+      Array.prototype.slice.call(document.querySelectorAll('.bar-conn')).forEach(function (cn, i) { cn.style.background = i < active ? '#c1694f' : 'rgba(236,227,214,0.18)'; });
+      var scroll = document.getElementById('csBarScroll'), act = steps[active];
+      if (scroll && act) {
+        var left = act.offsetLeft, right = left + act.offsetWidth;
+        if (left < scroll.scrollLeft + 24) scroll.scrollLeft = Math.max(0, left - 48);
+        else if (right > scroll.scrollLeft + scroll.clientWidth - 24) scroll.scrollLeft = right - scroll.clientWidth + 48;
+      }
+    }
+    window.addEventListener('scroll', sync, { passive: true });
+    window.addEventListener('resize', sync);
+    requestAnimationFrame(sync);
+    setTimeout(sync, 300);
+  }
+
+  var btn = document.getElementById('navToggle');
+  var links = document.getElementById('navLinks');
+  if (btn && links) {
+    btn.addEventListener('click', function(){
+      var open = links.classList.toggle('nav-open');
+      btn.classList.toggle('open', open);
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    links.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', function(){
+        links.classList.remove('nav-open');
+        btn.classList.remove('open');
+        btn.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
+});
+</script>
+</body>
+</html>
